@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-softGray: #F0F0F0;
+  --color-paleGray: #F2F0F1;
+  --color-pearlGray: #F0EEED;
+  --color-goldenAmber: #FFC633;
+  --color-cherryRed: #FF3333;
+  --color-emeraldGreen: #01AB31;
+}
+
+@font-face {
+  font-family: Satoshi;
+  src: url('/src/assets/fonts/Satoshi-Variable.ttf')
+}
+
+@font-face {
+  font-family: Integral CF;
+  src: url('/src/assets/fonts/Integral\ CF.ttf')
+}
+
+@theme {
+  --font-satoshi: Satoshi, "sans-serif";
+  --font-IntegralCF: Integral CF, "sans-serif";
+}
+
+* {
+  scrollbar-width: thin;
+  overflow-x: hidden;
+}
+
+.nav-container {
+  @apply flex flex-row mx-auto items-center justify-between gap-[96px] lg:gap-[40px] w-full;
+}
+
+.nav-links {
+  @apply flex items-center gap-[24px] text-black font-satoshi
+}
+
+.search-box {
+  @apply items-center hidden lg:flex bg-softGray rounded-[62px] px-4;
+}
+
+.search-input {
+  @apply w-[457px] h-[48px] hidden lg:flex pl-[12px] py-[12px] rounded-[62px] placeholder:font-satoshi bg-transparent outline-none;
+}
