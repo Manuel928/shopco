@@ -29,18 +29,14 @@
   overflow-x: hidden;
 }
 
+/* .nav-container {
+  @apply flex flex-row mx-auto items-center justify-between lg:gap-[40px] w-full;
+} */
+
 .nav-container {
-  @apply flex flex-row mx-auto items-center justify-between gap-[96px] lg:gap-[40px] w-full;
+  @apply flex flex-row lg:grid lg:grid-cols-12 justify-between py-[14px] lg:py-[24px] lg:justify-evenly gap-[40px] items-center w-full;
 }
 
 .nav-links {
-  @apply flex items-center gap-[24px] text-black font-satoshi
-}
-
-.search-box {
-  @apply items-center hidden lg:flex bg-softGray rounded-[62px] px-4;
-}
-
-.search-input {
-  @apply w-[457px] h-[48px] hidden lg:flex pl-[12px] py-[12px] rounded-[62px] placeholder:font-satoshi bg-transparent outline-none;
+  @apply flex text-nowrap shrink-0 items-center gap-[24px] text-black font-satoshi
 }

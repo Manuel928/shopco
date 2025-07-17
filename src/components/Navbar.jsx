@@ -11,9 +11,10 @@ import {
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="mx-auto overflow-hidden max-w-[1240px] px-[16px] lg:py-[24px] lg:px-[100px]">
+    <div className="mx-auto max-w-[1440px] px-[16px] lg:px-[100px]">
       <div className="nav-container">
-        <div className="flex items-center gap-[16px] lg:gap-0">
+        {/* Menu + Logo */}
+        <div className="col-span-2 flex items-center space-x-[16px] lg:space-x-0">
           <MenuIcon
             className="w-8 h-8 pt-[6px] cursor-pointer md:hidden"
             onClick={() => setIsOpen(true)}
@@ -26,10 +27,10 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Nav */}
-        <nav className="hidden md:block">
+        {/* Nav Links */}
+        <nav className="col-span-4 hidden md:block">
           <ul className="nav-links">
-            <li className="flex items-center gap-[4px]">
+            <li className="flex group group-hover:cursor-pointer items-center gap-[4px]">
               <Link to="/shop">Shop</Link>
               <ChevronDown />
             </li>
@@ -45,24 +46,20 @@ const Navbar = () => {
           </ul>
         </nav>
 
-        {/* <div className="md:hidden flex items-center gap-[12px]">
-          <SearchIcon className="w-8 h-8" />
-          <ShoppingCartIcon className="w-8 h-8" />
-          <CircleUserRoundIcon className="w-8 h-8" />
-        </div> */}
-
-        {/* Search */}
-        <div className="search-box">
+        {/* Search Box */}
+        <div className="col-span-5 hidden md:flex items-center bg-[#F0F0F0] rounded-[62px]">
           <SearchIcon className="text-[#00000066] w-5 h-5 ml-4" />
           <input
-            className="search-input"
+            className="bg-transparent h-[48px] px-2 focus:outline-none text-sm w-full"
             placeholder="Search for products..."
           />
         </div>
-        <div className="flex items-center gap-4">
-          <SearchIcon className="md:hidden w-7 h-7 lg:w-8 lg:h-8" />
-          <ShoppingCartIcon className="w-7 h-7 lg:w-8 lg:h-8" />
-          <CircleUserRoundIcon className="w-7 h-7 lg:w-8 lg:h-8" />
+
+        {/* Icons */}
+        <div className="col-span-1 flex items-center justify-end gap-4">
+          <SearchIcon className="md:hidden w-7 h-7" />
+          <ShoppingCartIcon className="w-7 h-7 cursor-pointer" />
+          <CircleUserRoundIcon className="w-7 h-7 cursor-pointer" />
         </div>
       </div>
     </div>

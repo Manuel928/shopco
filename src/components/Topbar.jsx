@@ -3,14 +3,14 @@ import { X } from "lucide-react";
 
 const Topbar = () => {
   return (
-    <div className="bg-black text-white justify-center lg:justify-end text-sm gap-[10px] lg:gap-[425px] mx-auto px-[16px] lg:px-[0px] font-satoshi h-[38px] flex items-center">
-      <p>
+    <div className="relative bg-black text-white h-[38px] flex items-center justify-center px-[16px] lg:px-[100px] text-sm font-satoshi">
+      <p className="text-center text-[12px] lg:text-sm">
         Sign up and get 20% off to your first order.{" "}
-        <a href="" className="underline">
+        <a href="#" className="underline">
           Sign Up Now
         </a>
       </p>
-      <X className="w-5 lg:w-8"/>
+      <X className="absolute right-[16px] lg:right-[100px] w-5 lg:w-6 cursor-pointer" />
     </div>
   );
 };
