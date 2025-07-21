@@ -11,7 +11,7 @@ import {
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="mx-auto max-w-[1440px] px-[16px] lg:px-[100px]">
+    <div className="mx-auto overflow-hidden max-w-[1440px] px-[16px] lg:px-[100px]">
       <div className="nav-container">
         {/* Menu + Logo */}
         <div className="col-span-2 flex items-center space-x-[16px] lg:space-x-0">
@@ -50,7 +50,7 @@ const Navbar = () => {
         <div className="col-span-5 hidden md:flex items-center bg-[#F0F0F0] rounded-[62px]">
           <SearchIcon className="text-[#00000066] w-5 h-5 ml-4" />
           <input
-            className="bg-transparent h-[48px] px-2 focus:outline-none text-sm w-full"
+            className="bg-transparent h-[48px] placeholder:font-satoshi px-2 focus:outline-none text-sm w-full"
             placeholder="Search for products..."
           />
         </div>

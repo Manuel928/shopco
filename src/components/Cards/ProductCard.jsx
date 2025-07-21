@@ -1,17 +1,23 @@
 import { StarIcon } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
+  const navigate = useNavigate();
   return (
-    <div className="flex flex-col gap-[10px] lg:gap-[16px] pt-[32px] lg:pt-[55px]">
-      <div className="bg-pearlGray w-[198px] h-[200.01px] lg:w-[295px] lg:h-[298px] rounded-[20px] flex items-center justify-center">
+    <div className="flex flex-col gap-[10px] lg:gap-[16px] pt-[32px] lg:pt-[55px] overflow-hidden">
+      <div className="bg-pearlGray w-[198px] cursor-pointer group h-[200.01px] lg:w-[295px] lg:h-[298px] rounded-[20px] flex items-center justify-center">
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-full object-contain"
+          className="w-full group-hover:scale-105 transition duration-200 h-full object-contain"
+          onClick={() => {
+            navigate(`/shop/${product._id}`);
+            scrollTo(0, 0);
+          }}
         />
       </div>
       <div className="flex flex-col gap-[4px] pb-[24px] lg:pb-[36px] lg:gap-[8px]">
-        <p className="font-bold font-satoshi text-[12px] lg:text-[16px]">
+        <p className="font-bold font-satoshi text-[14px] lg:text-[16px]">
           {product.name}
         </p>
         {/* Stars + rating */}
@@ -27,7 +33,8 @@ const ProductCard = ({ product }) => {
             ))}
           </div>
           <p className="font-satoshi text-[12px] lg:text-[14px]">
-            {(product.ratings).toFixed(1)}/<span className="text-[#00000099]">5</span>
+            {product.ratings.toFixed(1)}/
+            <span className="text-[#00000099]">5</span>
           </p>
         </div>
         {/* Stars + rating end */}
@@ -38,7 +45,7 @@ const ProductCard = ({ product }) => {
             ${product.price}
           </p>
           {product.oldPrice && (
-            <p className="font-bold text-[16px] text-[#8d8d8d66] line-through decoration-[#00000066] font-satoshi lg:text-[20px]">
+            <p className="font-bold text-[16px] text-[#00000066] line-through decoration-[#00000066] font-satoshi lg:text-[20px]">
               ${product.oldPrice}
             </p>
           )}

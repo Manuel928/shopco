@@ -1,26 +1,59 @@
-const Button = ({ backgroundColor = "", textcolor = "", text, border="" }) => {
+const Button = ({
+  backgroundColor = "black",
+  textcolor = "white",
+  text,
+  border = "black",
+  hoverBg = "black",
+  width = "w-full lg:w-[210px]", // Tailwind classes
+  height = "h-[52px]", // Tailwind class
+  additionalClasses = "",
+}) => {
   const bgColor = {
     black: "bg-black",
     white: "bg-white",
+    gray: "bg-[#F0F0F0]",
   };
 
-  const buttonTextColor = {
+  const textColor = {
     black: "text-black",
     white: "text-white",
+    gray: "text-[#00000099]",
+  };
+
+  const hover = {
+    black: "hover:bg-black hover:text-white",
+    white: "hover:bg-white hover:text-black",
+    gray: "hover:bg-[#e4e4e4]",
   };
 
   const borderColor = {
     black: "border border-black",
-    softGray: "border border-[#0000001A]"
+    softGray: "border border-[#0000001A]",
+    none: "border-none",
+  };
 
-  }
+  const bgClass = bgColor[backgroundColor] || "";
+  const textClass = textColor[textcolor] || "";
+  const borderClass = borderColor[border] || "";
+  const hoverClass = hover[hoverBg] || "";
 
-  const bgClass = bgColor[backgroundColor] || bgColor.black;
-  const buttonColorClass = buttonTextColor[textcolor] || buttonTextColor.white;
-  const borderClass = borderColor[border] || borderColor.black
   return (
     <button
-      className={`${bgClass} ${buttonColorClass} ${borderClass} font-satoshi cursor-pointer text-center h-[52px] w-full lg:w-[210px] rounded-[62px]`}
+      className={`
+        ${bgClass} 
+        ${textClass} 
+        ${borderClass} 
+        ${hoverClass} 
+        ${width} 
+        ${height} 
+        ${additionalClasses} 
+        font-satoshi 
+        cursor-pointer 
+        text-center 
+        transition 
+        duration-300 
+        rounded-[62px]
+      `}
     >
       {text}
     </button>

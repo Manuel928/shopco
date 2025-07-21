@@ -1,14 +1,25 @@
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
+import Topbar from "./components/Topbar";
+import Footer from "./components/Footer";
+import ProductDetails from "./pages/ProductDetails";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <BrowserRouter>
+    <div className="max-w-[1440px] mx-auto">
+      <Topbar />
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
+        {/* <Route path="/shop" element={<Shop />} />
+        <Route path="/shop/:category" element={<Category />} />
+        <Route path="/shop/:category/:type" element={<ProductType />} /> */}
+        <Route path="/shop/:id" element={<ProductDetails />} />
       </Routes>
-    </BrowserRouter>
+      <Footer />
+    </div>
   );
 }
 

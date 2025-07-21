@@ -13,6 +13,9 @@ import VerticalStripShirt from "../assets/VerticalStripShirt.png";
 import CourageTShirt from "../assets/CourageTShirt.png";
 import LooseFitShorts from "../assets/LooseFitShorts.png";
 import FadedSkinnyJeans from "../assets/FadedSkinnyJeans.png";
+import Cover1 from "../assets/Cover1.png";
+import Cover2 from "../assets/Cover2.png";
+import Cover3 from "../assets/Cover3.png";
 
 export const images = {
   SmallStar,
@@ -30,41 +33,56 @@ export const images = {
   CheckeredShirt,
   StrippedTShirt,
   SkinnyFitJeans,
+  Cover1,
+  Cover2,
+  Cover3,
 };
 
 export const newArrivals = [
   {
+    _id: "542314",
     image: Shirt1,
     name: "T-shirt with Tape Details",
+    covers: [Cover1, Cover2, Cover3],
     stars: 4.5,
     ratings: 4.5,
+    description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
     price: 120,
     oldPrice: "",
     discount: "",
   },
   {
+    _id: "242304",
     image: SkinnyFitJeans,
     name: "Skinny Fit Jeans",
+    covers: [Cover1, Cover2, Cover3],
     stars: 3.5,
     ratings: 3.5,
+    description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
     price: 240,
     oldPrice: 260,
     discount: -20,
   },
   {
+    _id: "642117",
     image: CheckeredShirt,
     name: "Checkered Shirt",
+    covers: [Cover1, Cover2, Cover3],
     stars: 4.5,
     ratings: 4.5,
+    description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
     price: 240,
     oldPrice: 260,
     discount: -20,
   },
   {
+    _id: "842218",
     image: StrippedTShirt,
     name: "Sleeve Stripped T-Shirt",
+    covers: [Cover1, Cover2, Cover3],
     stars: 4.5,
     ratings: 4.5,
+    description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
     price: 240,
     oldPrice: 260,
     discount: -20,
@@ -72,39 +90,79 @@ export const newArrivals = [
 ];
 export const topSelling = [
   {
+    _id: "442414",
     image: VerticalStripShirt,
     name: "Vertical Stripped Shirt",
+    covers: [Cover1, Cover2, Cover3],
     stars: 5,
     ratings: 5.0,
+    description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
     price: 212,
     oldPrice: 232,
     discount: -20,
   },
   {
+    _id: "341334",
     image: CourageTShirt,
     name: "Courage Graphic T-Shirt",
+    covers: [Cover1, Cover2, Cover3],
     stars: 4.0,
     ratings: 4.0,
+    description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
     price: 145,
     oldPrice: "",
     discount: "",
   },
   {
+    _id: "141311",
     image: LooseFitShorts,
     name: "Loose Fit Bermuda Short",
+    covers: [Cover1, Cover2, Cover3],
     stars: 3.0,
     ratings: 3.0,
+    description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
     price: 80,
     oldPrice: "",
     discount: "",
   },
   {
+    _id: "242913",
     image: FadedSkinnyJeans,
     name: "Faded Skinny Jeans",
+    covers: [Cover1, Cover2, Cover3],
     stars: 4.5,
     ratings: 4.5,
+    description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
     price: 210,
     oldPrice: "",
     discount: "",
+  },
+];
+
+export const testimonial = [
+  {
+    stars: 5,
+    clientName: "Sarah M.",
+    text: "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.",
+  },
+  {
+    stars: 5,
+    clientName: "Alex K.",
+    text: "Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is truly remarkable, catering to a variety of tastes and occasions.",
+  },
+  {
+    stars: 5,
+    clientName: "James L.",
+    text: "As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends.",
+  },
+  {
+    stars: 5,
+    clientName: "Sarah M.",
+    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis, esse. Consequatur a autem vel, sapiente sunt porro, ea, officia maiores fugit libero amet veritatis sed?",
+  },
+  {
+    stars: 5,
+    clientName: "Sarah M.",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repellat sapiente doloremque sunt laborum cupiditate expedita non, harum eveniet saepe voluptatum incidunt.",
   },
 ];
