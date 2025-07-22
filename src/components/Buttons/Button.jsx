@@ -6,6 +6,7 @@ const Button = ({
   hoverBg = "black",
   width = "w-full lg:w-[210px]", // Tailwind classes
   height = "h-[52px]", // Tailwind class
+  align = "self-start",
   additionalClasses = "",
 }) => {
   const bgColor = {
@@ -46,10 +47,11 @@ const Button = ({
         ${hoverClass} 
         ${width} 
         ${height} 
+        ${align}
         ${additionalClasses} 
         font-satoshi 
         cursor-pointer 
-        text-center 
+        text-center
         transition 
         duration-300 
         rounded-[62px]

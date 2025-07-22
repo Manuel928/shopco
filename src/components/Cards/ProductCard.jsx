@@ -5,7 +5,7 @@ const ProductCard = ({ product }) => {
   const navigate = useNavigate();
   return (
     <div className="flex flex-col gap-[10px] lg:gap-[16px] pt-[32px] lg:pt-[55px] overflow-hidden">
-      <div className="bg-pearlGray w-[198px] cursor-pointer group h-[200.01px] lg:w-[295px] lg:h-[298px] rounded-[20px] flex items-center justify-center">
+      <div className="bg-pearlGray cursor-pointer group h-[200.01px] lg:h-[298px] rounded-[20px]">
         <img
           src={product.image}
           alt={product.name}

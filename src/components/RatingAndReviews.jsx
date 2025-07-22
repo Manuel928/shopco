@@ -5,7 +5,7 @@ import RatingAndReviewsCard from "./Cards/RatingAndReviewsCard";
 
 const RatingAndReviews = () => {
   return (
-    <div className="max-w-[1440px]">
+    <div className="max-w-[1440px] flex flex-col justify-between">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-[8px]">
           <p className="font-satoshi font-bold">All Reviews</p>{" "}
@@ -35,11 +35,20 @@ const RatingAndReviews = () => {
       </div>
 
       {/* Cards */}
-      <div className="grid lg:grid-cols-2 gap-[20px] mt-[32px]">
+      <div className="grid lg:grid-cols-2 gap-[20px] mt-[32px] mb-[36.42px]">
         {ratings.map((r) => (
           <RatingAndReviewsCard ratings={r} key={r.stars} />
         ))}
       </div>
+      <Button
+        backgroundColor="white"
+        textcolor="black"
+        align="self-center"
+        border="softGray"
+        text={"Load More Reviews"}
+        width="w-[195px] lg:w-[230px]"
+        height="h-[47px] lg:h-[52px]"
+      ></Button>
     </div>
   );
 };

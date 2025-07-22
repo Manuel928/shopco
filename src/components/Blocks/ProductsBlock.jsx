@@ -34,6 +34,7 @@ const ProductsBlock = ({ heading, products }) => {
 
       <Button
         text="View all"
+        align="self-center"
         backgroundColor="white"
         border="softGray"
         textcolor="black"

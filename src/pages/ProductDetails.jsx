@@ -6,6 +6,7 @@ import { StarIcon } from "lucide-react";
 import Button from "../components/Buttons/Button";
 import Counter from "../components/Counter";
 import Tabs from "../components/Tabs";
+import RelatedProducts from "../components/RelatedProducts";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -159,6 +160,9 @@ const ProductDetails = () => {
 
       {/* Tabs */}
       <Tabs />
+
+      {/* Related Products */}
+      <RelatedProducts />
     </div>
   ) : (
     <div>Loading...</div>
