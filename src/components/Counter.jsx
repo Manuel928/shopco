@@ -24,7 +24,7 @@ const Counter = () => {
       <button onClick={decrement}>
         <Minus className="w-4 lg:w-8" />
       </button>
-      <input type="number" value={itemCount} className="outline-none w-full text-center" />
+      <input type="number" value={itemCount} className="outline-none w-full text-center font-satoshi" />
       <button onClick={increment}>
         <Plus className="w-4 lg:w-8" />
       </button>

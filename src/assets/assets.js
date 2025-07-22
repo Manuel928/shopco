@@ -16,6 +16,7 @@ import FadedSkinnyJeans from "../assets/FadedSkinnyJeans.png";
 import Cover1 from "../assets/Cover1.png";
 import Cover2 from "../assets/Cover2.png";
 import Cover3 from "../assets/Cover3.png";
+import FilterIcon from "../assets/FilterIcon.svg";
 
 export const images = {
   SmallStar,
@@ -36,6 +37,7 @@ export const images = {
   Cover1,
   Cover2,
   Cover3,
+  FilterIcon,
 };
 
 export const newArrivals = [
@@ -166,3 +168,42 @@ export const testimonial = [
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repellat sapiente doloremque sunt laborum cupiditate expedita non, harum eveniet saepe voluptatum incidunt.",
   },
 ];
+
+export const ratings = [
+  {
+    stars: 5,
+    clientName: "Sarah M.",
+    text: "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.",
+    dateTime: "Posted on August 14, 2023"
+  },
+  {
+    stars: 4,
+    clientName: "Sarah M.",
+    text: "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.",
+    dateTime: "Posted on August 14, 2023"
+  },
+  {
+    stars: 4,
+    clientName: "Amber M.",
+    text: "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.",
+    dateTime: "Posted on August 14, 2023"
+  },
+  {
+    stars: 5,
+    clientName: "Joe K.",
+    text: "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.",
+    dateTime: "Posted on August 14, 2023"
+  },
+  {
+    stars: 5,
+    clientName: "Cynthia M.",
+    text: "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.",
+    dateTime: "Posted on August 14, 2023"
+  },
+  {
+    stars: 5,
+    clientName: "Cynthia M.",
+    text: "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.",
+    dateTime: "Posted on August 14, 2023"
+  },
+]

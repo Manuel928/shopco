@@ -1,4 +1,5 @@
 import { useState } from "react";
+import RatingAndReviews from "./RatingAndReviews";
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState("Product Details");
@@ -8,7 +9,7 @@ const Tabs = () => {
       case "Product Details":
         return <div>Product Details</div>;
       case "Rating & Reviews":
-        return <div>Rating & Reviews</div>;
+        return <RatingAndReviews />;
       case "FAQs":
         return <div>FAQs</div>;
       default:
