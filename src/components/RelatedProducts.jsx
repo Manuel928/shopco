@@ -23,7 +23,7 @@ const RelatedProducts = ({ currentProduct }) => {
     scrollTo(0, 0);
   }
   return (
-    <section className="pt-[50px] pb-[78px] max-w-[1440px] mx-auto flex flex-col items-center lg:pt-[72px]">
+    <section className="pt-[50px] pb-[178px] max-w-[1440px] mx-auto flex flex-col items-center lg:pt-[72px]">
       <p className="font-IntegralCF font-bold text-[24px] lg:text-[36px] text-center">
         You may also like
       </p>

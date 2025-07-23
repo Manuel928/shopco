@@ -9,7 +9,7 @@ const Hero = () => {
   bg-no-repeat 
   bg-cover 
   bg-center
-  lg:bg-right-top
+  lg:bg-center
   h-[853px] lg:h-[663px] lg:bg-[url('/HeroImage.webp')] max-w-[1440px] px-[16px] lg:px-[100px] overflow-hidden"
       // style={{
       //   backgroundImage: `url(${"HeroImage.webp"})`,
@@ -21,13 +21,13 @@ const Hero = () => {
       {/* Stars */}
       <img
         src={images.SmallStar}
-        className="absolute left-[27px] top-[640px] lg:left-[750px] lg:top-[431px]"
+        className="absolute left-[27px] top-[640px] lg:left-[710px] lg:top-[250px]"
         alt=""
         srcset=""
       />
       <img
         src={images.BigStar}
-        className="absolute left-[293px] top-[543px] lg:left-[1255px] lg:top-[220px]"
+        className="absolute left-[293px] top-[543px] lg:left-[1155px] lg:top-[110px]"
         alt=""
         srcset=""
       />

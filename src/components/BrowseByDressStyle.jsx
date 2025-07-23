@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 const BrowseByDressStyle = () => {
+  const navigate = useNavigate()
   return (
     <div className="bg-softGray max-w-[1440px] overflow-hidden flex flex-col items-center gap-[28px] lg:gap-[64px] px-[24px] lg:px-[64px] rounded-[20px] lg:rounded-[40px] py-[40px] lg:py-[70px] mt-[50px] lg:mt-[80px] mx-[16px] lg:mx-[100px]">
       <p className="font-bold font-IntegralCF text-center leading-[36px] lg:leading-[100%] max-w-[246px] lg:max-w-full text-[24px] lg:text-[36px]">
@@ -8,7 +11,7 @@ const BrowseByDressStyle = () => {
       {/* Styles */}
       <div className="space-y-[20px]">
         <div className="grid lg:grid-cols-3 items-center gap-[20px]">
-          <div className="relative col-span-1 group w-[310px] h-[190px] rounded-[20px] cursor-pointer overflow-hidden">
+          <div className="relative col-span-1 group w-[310px] h-[190px] rounded-[20px] cursor-pointer overflow-hidden" onClick={() => navigate('/category/casual')}>
             {/* Background layer */}
             <div className="absolute inset-0 bg-cover bg-no-repeat bg-left-top bg-[url('/Casual.png')] transition-transform duration-500 group-hover:scale-110"></div>
 

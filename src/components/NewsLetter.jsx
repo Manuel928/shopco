@@ -9,15 +9,16 @@ const NewsLetter = () => {
           STAY UP TO DATE ABOUT OUR LATEST OFFERS
         </p>
         <div className="flex flex-col gap-[12px] lg:gap-[14px]">
-          <div className="bg-[#F0F0F0] flex items-center rounded-[62px]">
+          <div className="bg-[#F0F0F0] max-w-full lg:max-w-[349px] flex items-center rounded-[62px]">
             <MailIcon className="text-[#00000066] w-5 h-5 ml-4" />
             <input
-              className="bg-transparent h-[42px] px-4 py-3 placeholder:font-satoshi focus:outline-none text-sm w-full"
+              className="bg-transparent h-[42px] px-4 py-3 placeholder:font-satoshi focus:outline-none text-sm"
               placeholder="Enter your email address..."
             />
           </div>
           <Button
             text="Subscribe to Newsletter"
+            width="w-full lg:w-[349px]" height="h-[42px] lg:h-[46px]"
             backgroundColor="white"
             border="softGray"
             textcolor="black"

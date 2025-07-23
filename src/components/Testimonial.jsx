@@ -12,7 +12,7 @@ const Testimonial = () => {
   const [embla, setEmbla] = useState(null);
   return (
     <>
-      <div className="flex flex-col pt-[50px] overflow-visible lg:pt-[80px] max-w-[1440px] px-[16px] lg:px-[100px]">
+      <div className="flex flex-col pt-[50px] pb-[140px] lg:pb-[178px] overflow-visible lg:pt-[80px] max-w-[1440px] px-[16px] lg:px-[100px]">
         <div className="flex items-center justify-between">
           <p className="font-bold font-IntegralCF max-w-[286px] lg:max-w-full text-[24px] lg:text-[36px]">
             OUR HAPPY CUSTOMERS
