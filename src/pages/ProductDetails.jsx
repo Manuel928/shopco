@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import Breadcrumb from "../components/Breadcrumb";
 import { useEffect, useState } from "react";
 import { newArrivals, topSelling } from "../assets/assets";
@@ -11,12 +11,17 @@ import RelatedProducts from "../components/RelatedProducts";
 const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const location = useLocation()
+
+  // console.log(location);
+  
 
   const getProduct = async () => {
     const combinedProducts = [...topSelling, ...newArrivals];
     const foundProduct = combinedProducts.find((product) => product._id === id);
     setProduct(foundProduct);
   };
+  
 
   useEffect(() => {
     getProduct();
@@ -159,10 +164,10 @@ const ProductDetails = () => {
       </div>
 
       {/* Tabs */}
-      <Tabs />
+      <Tabs prop={product} />
 
       {/* Related Products */}
-      <RelatedProducts />
+      <RelatedProducts currentProduct={product} />
     </div>
   ) : (
     <div>Loading...</div>

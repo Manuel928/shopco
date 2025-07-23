@@ -1,19 +1,22 @@
 import { StarIcon } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, setOnClick }) => {
   const navigate = useNavigate();
+  // const { pathname } = useLocation();
+
+  function handleNavigation() {
+    navigate(`/shop/${product._id}`);
+    scrollTo(0, 0);
+  }
   return (
     <div className="flex flex-col gap-[10px] lg:gap-[16px] pt-[32px] lg:pt-[55px] overflow-hidden">
       <div className="bg-pearlGray cursor-pointer group h-[200.01px] lg:h-[298px] rounded-[20px]">
         <img
           src={product.image}
           alt={product.name}
-          className="w-full group-hover:scale-105 transition duration-200 h-full object-contain"
-          onClick={() => {
-            navigate(`/shop/${product._id}`);
-            scrollTo(0, 0);
-          }}
+          className="w-full group-hover:scale-x-105 transition duration-200 rounded-[20px] h-full object-contain"
+          onClick={handleNavigation}
         />
       </div>
       <div className="flex flex-col gap-[4px] pb-[24px] lg:pb-[36px] lg:gap-[8px]">

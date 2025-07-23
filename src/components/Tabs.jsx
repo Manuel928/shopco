@@ -1,13 +1,13 @@
 import { useState } from "react";
 import RatingAndReviews from "./RatingAndReviews";
 
-const Tabs = () => {
+const Tabs = ({ prop }) => {
   const [activeTab, setActiveTab] = useState("Product Details");
 
   const renderContent = () => {
     switch (activeTab) {
       case "Product Details":
-        return <div>Product Details</div>;
+        return <p className="font-satoshi">{prop.productDetails}</p>;
       case "Rating & Reviews":
         return <RatingAndReviews />;
       case "FAQs":

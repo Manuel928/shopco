@@ -16,6 +16,10 @@ import FadedSkinnyJeans from "../assets/FadedSkinnyJeans.png";
 import Cover1 from "../assets/Cover1.png";
 import Cover2 from "../assets/Cover2.png";
 import Cover3 from "../assets/Cover3.png";
+import BlackTShirt from "../assets/BlackTShirt.png";
+import GradientShirt from "../assets/GradientShirt.png";
+import PoloWithTippings from "../assets/PoloWithTippings.png";
+import PoloWithTrims from "../assets/PoloWithTrims.png";
 import FilterIcon from "../assets/FilterIcon.svg";
 
 export const images = {
@@ -34,6 +38,10 @@ export const images = {
   CheckeredShirt,
   StrippedTShirt,
   SkinnyFitJeans,
+  PoloWithTippings,
+  PoloWithTrims,
+  GradientShirt,
+  BlackTShirt,
   Cover1,
   Cover2,
   Cover3,
@@ -48,7 +56,10 @@ export const newArrivals = [
     covers: [Cover1, Cover2, Cover3],
     stars: 4.5,
     ratings: 4.5,
-    description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+    productDetails:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+    description:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
     price: 120,
     oldPrice: "",
     discount: "",
@@ -60,7 +71,10 @@ export const newArrivals = [
     covers: [Cover1, Cover2, Cover3],
     stars: 3.5,
     ratings: 3.5,
-    description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+    productDetails:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+    description:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
     price: 240,
     oldPrice: 260,
     discount: -20,
@@ -72,7 +86,10 @@ export const newArrivals = [
     covers: [Cover1, Cover2, Cover3],
     stars: 4.5,
     ratings: 4.5,
-    description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+    productDetails:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+    description:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
     price: 240,
     oldPrice: 260,
     discount: -20,
@@ -84,7 +101,10 @@ export const newArrivals = [
     covers: [Cover1, Cover2, Cover3],
     stars: 4.5,
     ratings: 4.5,
-    description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+    productDetails:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+    description:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
     price: 240,
     oldPrice: 260,
     discount: -20,
@@ -98,7 +118,10 @@ export const topSelling = [
     covers: [Cover1, Cover2, Cover3],
     stars: 5,
     ratings: 5.0,
-    description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+    productDetails:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+    description:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
     price: 212,
     oldPrice: 232,
     discount: -20,
@@ -110,7 +133,10 @@ export const topSelling = [
     covers: [Cover1, Cover2, Cover3],
     stars: 4.0,
     ratings: 4.0,
-    description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+    productDetails:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+    description:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
     price: 145,
     oldPrice: "",
     discount: "",
@@ -122,7 +148,10 @@ export const topSelling = [
     covers: [Cover1, Cover2, Cover3],
     stars: 3.0,
     ratings: 3.0,
-    description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+    productDetails:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+    description:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
     price: 80,
     oldPrice: "",
     discount: "",
@@ -134,7 +163,10 @@ export const topSelling = [
     covers: [Cover1, Cover2, Cover3],
     stars: 4.5,
     ratings: 4.5,
-    description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+    productDetails:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+    description:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
     price: 210,
     oldPrice: "",
     discount: "",
@@ -174,87 +206,99 @@ export const ratings = [
     stars: 5,
     clientName: "Sarah M.",
     text: "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.",
-    dateTime: "Posted on August 14, 2023"
+    dateTime: "Posted on August 14, 2023",
   },
   {
     stars: 4,
     clientName: "Sarah M.",
     text: "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.",
-    dateTime: "Posted on August 14, 2023"
+    dateTime: "Posted on August 14, 2023",
   },
   {
     stars: 4,
     clientName: "Amber M.",
     text: "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.",
-    dateTime: "Posted on August 14, 2023"
+    dateTime: "Posted on August 14, 2023",
   },
   {
     stars: 5,
     clientName: "Joe K.",
     text: "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.",
-    dateTime: "Posted on August 14, 2023"
+    dateTime: "Posted on August 14, 2023",
   },
   {
     stars: 5,
     clientName: "Cynthia M.",
     text: "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.",
-    dateTime: "Posted on August 14, 2023"
+    dateTime: "Posted on August 14, 2023",
   },
   {
     stars: 5,
     clientName: "Cynthia M.",
     text: "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.",
-    dateTime: "Posted on August 14, 2023"
+    dateTime: "Posted on August 14, 2023",
   },
-]
+];
 
 export const relatedProducts = [
   {
-    _id: "341334",
-    image: CourageTShirt,
-    name: "Courage Graphic T-Shirt",
+    _id: "890334",
+    image: PoloWithTrims,
+    name: "Polo with Contrast Trims",
     covers: [Cover1, Cover2, Cover3],
     stars: 4.0,
-    ratings: 4.0,
-    description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+    ratings: 5.0,
+    productDetails:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+    description:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+    price: 212,
+    oldPrice: 242,
+    discount: -20,
+  },
+  {
+    _id: "777334",
+    image: GradientShirt,
+    name: "Gradient Graphic T-shirt",
+    covers: [Cover1, Cover2, Cover3],
+    stars: 3.0,
+    ratings: 5.0,
+    productDetails:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+    description:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
     price: 145,
     oldPrice: "",
     discount: "",
   },
   {
-    _id: "341334",
-    image: VerticalStripShirt,
-    name: "Courage Graphic T-Shirt",
+    _id: "341900",
+    image: PoloWithTippings,
+    name: "Polo with Tipping Details",
     covers: [Cover1, Cover2, Cover3],
-    stars: 4.0,
-    ratings: 4.0,
-    description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
-    price: 145,
+    stars: 4.5,
+    ratings: 5.0,
+    productDetails:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+    description:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+    price: 180,
     oldPrice: "",
     discount: "",
   },
   {
-    _id: "341334",
-    image: CheckeredShirt,
-    name: "Courage Graphic T-Shirt",
+    _id: "901400",
+    image: BlackTShirt,
+    name: "Black Striped T-shirt",
     covers: [Cover1, Cover2, Cover3],
-    stars: 4.0,
-    ratings: 4.0,
-    description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
-    price: 145,
-    oldPrice: "",
-    discount: "",
+    stars: 5.0,
+    ratings: 5.0,
+    productDetails:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+    description:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+    price: 120,
+    oldPrice: 150,
+    discount: -30,
   },
-  {
-    _id: "341334",
-    image: CheckeredShirt,
-    name: "Courage Graphic T-Shirt",
-    covers: [Cover1, Cover2, Cover3],
-    stars: 4.0,
-    ratings: 4.0,
-    description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
-    price: 145,
-    oldPrice: "",
-    discount: "",
-  },
-]
+];

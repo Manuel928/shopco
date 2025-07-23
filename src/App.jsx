@@ -7,6 +7,7 @@ import ProductDetails from "./pages/ProductDetails";
 import Navbar from "./components/Navbar";
 
 function App() {
+
   return (
     <div className="max-w-[1440px] mx-auto">
       <Topbar />
@@ -17,6 +18,8 @@ function App() {
         <Route path="/shop/:category" element={<Category />} />
         <Route path="/shop/:category/:type" element={<ProductType />} /> */}
         <Route path="/shop/:id" element={<ProductDetails />} />
+        {/* <Route path="/related/:id" element={<ProductDetails />} /> */}
+        {/* <Route path="/shop/:id/relatedProducts/:id" element={<ProductDetails />} /> */}
       </Routes>
       <Footer />
     </div>
