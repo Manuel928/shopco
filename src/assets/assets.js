@@ -53,7 +53,7 @@ export const newArrivals = [
     _id: "542314",
     image: Shirt1,
     name: "T-shirt with Tape Details",
-    covers: [Cover1, Cover2, Cover3],
+    covers: [Shirt1, Cover2, Cover3],
     stars: 4.5,
     ratings: 4.5,
     productDetails:
@@ -63,12 +63,13 @@ export const newArrivals = [
     price: 120,
     oldPrice: "",
     discount: "",
+    category: "Casual",
   },
   {
     _id: "242304",
     image: SkinnyFitJeans,
     name: "Skinny Fit Jeans",
-    covers: [Cover1, Cover2, Cover3],
+    covers: [SkinnyFitJeans, Cover2, Cover3],
     stars: 3.5,
     ratings: 3.5,
     productDetails:
@@ -78,12 +79,13 @@ export const newArrivals = [
     price: 240,
     oldPrice: 260,
     discount: -20,
+    category: "Gym",
   },
   {
     _id: "642117",
     image: CheckeredShirt,
     name: "Checkered Shirt",
-    covers: [Cover1, Cover2, Cover3],
+    covers: [CheckeredShirt, Cover2, Cover3],
     stars: 4.5,
     ratings: 4.5,
     productDetails:
@@ -93,12 +95,13 @@ export const newArrivals = [
     price: 240,
     oldPrice: 260,
     discount: -20,
+    category: "Casual",
   },
   {
     _id: "842218",
     image: StrippedTShirt,
     name: "Sleeve Stripped T-Shirt",
-    covers: [Cover1, Cover2, Cover3],
+    covers: [StrippedTShirt, Cover2, Cover3],
     stars: 4.5,
     ratings: 4.5,
     productDetails:
@@ -108,6 +111,7 @@ export const newArrivals = [
     price: 240,
     oldPrice: 260,
     discount: -20,
+    category: "Casual",
   },
 ];
 export const topSelling = [
@@ -115,7 +119,7 @@ export const topSelling = [
     _id: "442414",
     image: VerticalStripShirt,
     name: "Vertical Stripped Shirt",
-    covers: [Cover1, Cover2, Cover3],
+    covers: [VerticalStripShirt, Cover2, Cover3],
     stars: 5,
     ratings: 5.0,
     productDetails:
@@ -125,12 +129,13 @@ export const topSelling = [
     price: 212,
     oldPrice: 232,
     discount: -20,
+    category: "Formal",
   },
   {
     _id: "341334",
     image: CourageTShirt,
     name: "Courage Graphic T-Shirt",
-    covers: [Cover1, Cover2, Cover3],
+    covers: [CourageTShirt, Cover2, Cover3],
     stars: 4.0,
     ratings: 4.0,
     productDetails:
@@ -140,12 +145,13 @@ export const topSelling = [
     price: 145,
     oldPrice: "",
     discount: "",
+    category: "Casual",
   },
   {
     _id: "141311",
     image: LooseFitShorts,
     name: "Loose Fit Bermuda Short",
-    covers: [Cover1, Cover2, Cover3],
+    covers: [LooseFitShorts, Cover2, Cover3],
     stars: 3.0,
     ratings: 3.0,
     productDetails:
@@ -155,12 +161,13 @@ export const topSelling = [
     price: 80,
     oldPrice: "",
     discount: "",
+    category: "Gym",
   },
   {
     _id: "242913",
     image: FadedSkinnyJeans,
     name: "Faded Skinny Jeans",
-    covers: [Cover1, Cover2, Cover3],
+    covers: [FadedSkinnyJeans, Cover2, Cover3],
     stars: 4.5,
     ratings: 4.5,
     productDetails:
@@ -170,6 +177,7 @@ export const topSelling = [
     price: 210,
     oldPrice: "",
     discount: "",
+    category: "Party",
   },
 ];
 
@@ -255,6 +263,7 @@ export const relatedProducts = [
     price: 212,
     oldPrice: 242,
     discount: -20,
+    category: "Casual",
   },
   {
     _id: "777334",
@@ -270,6 +279,7 @@ export const relatedProducts = [
     price: 145,
     oldPrice: "",
     discount: "",
+    category: "Casual",
   },
   {
     _id: "341900",
@@ -285,6 +295,7 @@ export const relatedProducts = [
     price: 180,
     oldPrice: "",
     discount: "",
+    category: "Party",
   },
   {
     _id: "901400",
@@ -300,5 +311,6 @@ export const relatedProducts = [
     price: 120,
     oldPrice: 150,
     discount: -30,
+    category: "Casual",
   },
 ];

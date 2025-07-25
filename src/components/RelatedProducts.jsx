@@ -1,22 +1,18 @@
-import ProductCard from "./Cards/ProductCard";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
 import { relatedProducts } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
 import { newArrivals, topSelling } from "../assets/assets";
 import { StarIcon } from "lucide-react";
+import { useProductImage } from "./ProductImageContext";
 
-const RelatedProducts = ({ currentProduct }) => {
+const RelatedProducts = () => {
   const navigate = useNavigate();
+  const { product } = useProductImage();
+
+  if (!product) return null;
 
   const combinedProducts = [...topSelling, ...newArrivals];
 
-  const related = combinedProducts.filter(
-    (item) => item._id !== currentProduct._id
-  );
+  const related = combinedProducts.filter((p) => p._id !== product._id);
 
   function handleNavigation(productId) {
     navigate(`/shop/${productId}`);

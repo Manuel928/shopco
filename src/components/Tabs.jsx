@@ -1,13 +1,17 @@
 import { useState } from "react";
 import RatingAndReviews from "./RatingAndReviews";
+import { useProductImage } from "./ProductImageContext";
 
-const Tabs = ({ prop }) => {
+const Tabs = () => {
   const [activeTab, setActiveTab] = useState("Product Details");
+  const { product } = useProductImage();
+
+  if (!product) return null;
 
   const renderContent = () => {
     switch (activeTab) {
       case "Product Details":
-        return <p className="font-satoshi">{prop.productDetails}</p>;
+        return <p className="font-satoshi">{product.productDetails}</p>;
       case "Rating & Reviews":
         return <RatingAndReviews />;
       case "FAQs":

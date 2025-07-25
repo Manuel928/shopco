@@ -5,18 +5,20 @@ import { newArrivals, topSelling } from "../assets/assets";
 
 const Counter = () => {
   const [itemCount, setItemCount] = useState(1);
-  const {id} = useParams()
+  const { id } = useParams();
 
   const getPrice = async () => {
-    const combinedPrice = [...topSelling, ...newArrivals]
-  }
+    const combinedPrice = [...topSelling, ...newArrivals];
+  };
   function decrement() {
     if (itemCount > 1) {
       setItemCount((itemCount) => itemCount - 1);
     }
   }
   function increment() {
-    setItemCount((itemCount) => itemCount + 1);
+    if (itemCount < 10) {
+      setItemCount((itemCount) => itemCount + 1);
+    }
   }
 
   return (
@@ -24,7 +26,11 @@ const Counter = () => {
       <button onClick={decrement}>
         <Minus className="w-4 lg:w-8" />
       </button>
-      <input type="number" value={itemCount} className="outline-none w-full text-center font-satoshi" />
+      <input
+        type="number"
+        value={itemCount}
+        className="outline-none w-full text-center font-satoshi"
+      />
       <button onClick={increment}>
         <Plus className="w-4 lg:w-8" />
       </button>

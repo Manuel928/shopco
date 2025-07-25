@@ -1,9 +1,8 @@
 import { StarIcon } from "lucide-react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const ProductCard = ({ product, setOnClick }) => {
+const ProductCard = ({ product}) => {
   const navigate = useNavigate();
-  // const { pathname } = useLocation();
 
   function handleNavigation() {
     navigate(`/shop/${product._id}`);
@@ -15,7 +14,7 @@ const ProductCard = ({ product, setOnClick }) => {
         <img
           src={product.image}
           alt={product.name}
-          className="w-full group-hover:scale-x-105 transition duration-200 rounded-[20px] h-full object-contain"
+          className="w-full group-hover:scale-x-105 transition duration-200 rounded-[20px] object-fit"
           onClick={handleNavigation}
         />
       </div>

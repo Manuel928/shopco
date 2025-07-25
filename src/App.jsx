@@ -5,6 +5,7 @@ import Topbar from "./components/Topbar";
 import Footer from "./components/Footer";
 import ProductDetails from "./pages/ProductDetails";
 import Navbar from "./components/Navbar";
+import CategoriesPage from "./pages/CategoriesPage";
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/shop/:category" element={<Category />} />
         <Route path="/shop/:category/:type" element={<ProductType />} /> */}
         <Route path="/shop/:id" element={<ProductDetails />} />
+        <Route path="/category/:category" element={<CategoriesPage />} />
         {/* <Route path="/related/:id" element={<ProductDetails />} /> */}
         {/* <Route path="/shop/:id/relatedProducts/:id" element={<ProductDetails />} /> */}
       </Routes>
