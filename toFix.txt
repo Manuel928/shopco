@@ -1,2 +1,0 @@
-- OnClick of another product the active tab should reset back to product details. it should not keep the state of the previous product.
-- Same as the counter component
