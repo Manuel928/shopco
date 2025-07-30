@@ -7,6 +7,8 @@ import ProductDetails from "./pages/ProductDetails";
 import Navbar from "./components/Navbar";
 import CategoriesPage from "./pages/CategoriesPage";
 import ScrollToTop from "./components/ScrollToTop";
+import Shop from "./pages/Shop";
+import Category from "./pages/Category";
 
 function App() {
 
@@ -20,7 +22,9 @@ function App() {
         {/* <Route path="/shop" element={<Shop />} />
         <Route path="/shop/:category" element={<Category />} />
         <Route path="/shop/:category/:type" element={<ProductType />} /> */}
+        <Route path="/shop" element={<Shop />} />
         <Route path="/shop/:id" element={<ProductDetails />} />
+        <Route path="/category" element={<Category />} />
         <Route path="/category/:category" element={<CategoriesPage />} />
         {/* <Route path="/related/:id" element={<ProductDetails />} /> */}
         {/* <Route path="/shop/:id/relatedProducts/:id" element={<ProductDetails />} /> */}
