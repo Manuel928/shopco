@@ -123,7 +123,7 @@ const Footer = () => {
           <hr className="text-[#0000001A] mt-[40px] lg:mt-[50px]" />
           <div className="flex items-center justify-center mt-[16px] lg:mt-[25px] lg:justify-between">
             <p className="py-4 text-xs md:text-sm text-gray-500">
-              Shop.co © 2000-2023, All Rights Reserved
+              Shop.co © 2000-{new Date().getFullYear()}, All Rights Reserved
             </p>
 
             {/* Credit cards */}

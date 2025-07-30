@@ -9,14 +9,13 @@ const kpis = [
 const KpiBlock = () => {
   return (
     <div className="flex max-w-[1440px] items-center justify-center lg:items-start lg:justify-start">
-      <div className="flex flex-wrap lg:flex-nowrap items-center gap-[27.5px] lg:gap-[32px] w-[278px] lg:w-[596px]">
+      <div className="flex flex-wrap lg:flex-nowrap items-center justify-center gap-y-[12px]">
         {kpis.map((kpi, index) => (
           <React.Fragment key={index}>
-            <div className="w-[106px] h-full lg:w-[141px] lg:h-[74px] flex flex-col justify-center space-y-[2px]">
+            <div className="h-full lg:h-[74px] flex flex-col space-y-[2px]">
               <p className="font-satoshi font-bold text-[24px]">{kpi.value}</p>
               <p className="font-satoshi text-nowrap text-[12px]">
                 {kpi.label}
-                
               </p>
             </div>
             {index < kpis.length - 1 && (

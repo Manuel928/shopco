@@ -4,11 +4,11 @@ import RelatedProducts from "../components/RelatedProducts";
 import LeftCoverImages from "../components/LeftCoverImages";
 import ProductImageInView from "../components/ProductImageInView";
 import ItemDetails from "../components/ItemDetails";
-import { ProductImageProvider } from "../components/ProductImageContext";
+import { ProductProvider } from "../components/ProductContext";
 
 const ProductDetails = () => {
   return (
-    <ProductImageProvider>
+    <ProductProvider>
       <div className="max-w-[1440px] px-[16px] lg:px-[100px]">
         <Breadcrumb />
 
@@ -29,7 +29,7 @@ const ProductDetails = () => {
         {/* Related Products */}
         <RelatedProducts />
       </div>
-    </ProductImageProvider>
+    </ProductProvider>
   );
 };
 

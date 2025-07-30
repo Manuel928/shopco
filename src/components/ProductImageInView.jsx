@@ -1,7 +1,7 @@
-import { useProductImage } from "../components/ProductImageContext";
+import { useProduct } from "../components/ProductContext";
 
 const ProductImageInView = () => {
-  const { productImageInView } = useProductImage();
+  const { productImageInView } = useProduct();
 
   return (
     <img

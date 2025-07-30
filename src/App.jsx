@@ -6,11 +6,13 @@ import Footer from "./components/Footer";
 import ProductDetails from "./pages/ProductDetails";
 import Navbar from "./components/Navbar";
 import CategoriesPage from "./pages/CategoriesPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
 
   return (
     <div className="max-w-[1440px] mx-auto">
+      <ScrollToTop/>
       <Topbar />
       <Navbar/>
       <Routes>

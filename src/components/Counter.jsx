@@ -1,23 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Minus, Plus } from "lucide-react";
-import { useParams } from "react-router-dom";
-import { newArrivals, topSelling } from "../assets/assets";
+import { useProduct } from "./ProductContext";
 
 const Counter = () => {
   const [itemCount, setItemCount] = useState(1);
-  const { id } = useParams();
+  const { product } = useProduct();
 
-  const getPrice = async () => {
-    const combinedPrice = [...topSelling, ...newArrivals];
-  };
+  useEffect(() => {
+    setItemCount(1);
+  }, [product]);
+
   function decrement() {
     if (itemCount > 1) {
-      setItemCount((itemCount) => itemCount - 1);
+      setItemCount((prev) => prev - 1);
     }
   }
   function increment() {
     if (itemCount < 10) {
-      setItemCount((itemCount) => itemCount + 1);
+      setItemCount((prev) => prev + 1);
     }
   }
 

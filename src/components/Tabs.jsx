@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RatingAndReviews from "./RatingAndReviews";
-import { useProductImage } from "./ProductImageContext";
+import { useProduct } from "./ProductContext";
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState("Product Details");
-  const { product } = useProductImage();
+  const { product } = useProduct();
 
+  // Reset active tab when product changes
+  useEffect(() => {
+    setActiveTab("Product Details");
+  }, [product]);
   if (!product) return null;
 
   const renderContent = () => {

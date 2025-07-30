@@ -2,11 +2,11 @@ import { relatedProducts } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
 import { newArrivals, topSelling } from "../assets/assets";
 import { StarIcon } from "lucide-react";
-import { useProductImage } from "./ProductImageContext";
+import { useProduct } from "./ProductContext";
 
 const RelatedProducts = () => {
   const navigate = useNavigate();
-  const { product } = useProductImage();
+  const { product } = useProduct();
 
   if (!product) return null;
 

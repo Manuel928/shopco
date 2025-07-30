@@ -1,23 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { newArrivals, topSelling } from "../assets/assets";
 import Button from "./Buttons/Button";
 import Counter from "./Counter";
 import { StarIcon } from "lucide-react";
+import { useProduct } from "./ProductContext";
 
 const ItemDetails = () => {
-    const { id } = useParams();
-  const [product, setProduct] = useState(null);
+  const { product } = useProduct();
 
-  const getProduct = async () => {
-    const combinedProducts = [...topSelling, ...newArrivals];
-    const foundProduct = combinedProducts.find((product) => product._id === id);
-    setProduct(foundProduct);
-  };
-
-  useEffect(() => {
-    getProduct();
-  }, [id]);
   return (
     <div className="space-y-[20px] mt-[8px] lg:mt-0 order-3">
       <div className="space-y-[12px] lg:space-y-[14px]">
@@ -94,6 +83,7 @@ const ItemDetails = () => {
             backgroundColor="gray"
             textcolor="gray"
             text={"Small"}
+            additionalClasses="text-sm"
             border="softGray"
           />
           <Button
@@ -102,6 +92,7 @@ const ItemDetails = () => {
             backgroundColor="gray"
             textcolor="gray"
             text={"Medium"}
+            additionalClasses="text-sm"
             border="softGray"
           />
           <Button
@@ -110,6 +101,7 @@ const ItemDetails = () => {
             backgroundColor="gray"
             textcolor="gray"
             text={"Large"}
+            additionalClasses="text-sm"
             border="softGray"
           />
           <Button
@@ -118,6 +110,7 @@ const ItemDetails = () => {
             backgroundColor="gray"
             textcolor="gray"
             text={"X-Large"}
+            additionalClasses="text-sm"
             border="softGray"
           />
         </div>

@@ -3,13 +3,13 @@ import { useParams } from "react-router-dom";
 import { newArrivals, topSelling } from "../assets/assets";
 
 // 1. Create context
-const ProductImageContext = createContext();
+const ProductContext = createContext();
 
 // 2. Custom hook for convenience
-export const useProductImage = () => useContext(ProductImageContext);
+export const useProduct = () => useContext(ProductContext);
 
 // 3. Provider
-export const ProductImageProvider = ({ children }) => {
+export const ProductProvider = ({ children }) => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [productImageInView, setProductImageInView] = useState(null);
@@ -27,10 +27,10 @@ export const ProductImageProvider = ({ children }) => {
   }, [product]);
 
   return (
-    <ProductImageContext.Provider
+    <ProductContext.Provider
       value={{ product, productImageInView, setProductImageInView }}
     >
       {children}
-    </ProductImageContext.Provider>
+    </ProductContext.Provider>
   );
 };
