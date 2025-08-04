@@ -314,3 +314,27 @@ export const relatedProducts = [
     category: "Casual",
   },
 ];
+
+export const cart = [
+  {
+    image: BlackTShirt,
+    productName: "Black Striped T-shirt",
+    color: "White",
+    size: "Large",
+    price: 120,
+  },
+  {
+    image: PoloWithTippings,
+    productName: "Polo with Tipping Details",
+    color: "Black",
+    size: "Large",
+    price: 180,
+  },
+  {
+    image: GradientShirt,
+    productName: "Gradient Graphic T-shirt",
+    color: "White",
+    size: "Large",
+    price: 145,
+  },
+];

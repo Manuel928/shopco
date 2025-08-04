@@ -3,9 +3,11 @@ import Button from "./Buttons/Button";
 import Counter from "./Counter";
 import { StarIcon } from "lucide-react";
 import { useProduct } from "./ProductContext";
+import { Link, useNavigate } from "react-router-dom";
 
 const ItemDetails = () => {
   const { product } = useProduct();
+  const navigate = useNavigate()
 
   return (
     <div className="space-y-[20px] mt-[8px] lg:mt-0 order-3">
@@ -118,14 +120,23 @@ const ItemDetails = () => {
       <hr className="text-[#0000001A]" />
       <div className="flex items-center gap-[12px] lg:gap-[20px] mb-[50px] lg:mb-[80px]">
         <Counter />
-        <Button
+        {/* <Button
           height="h-[44px] lg:h-[52px]"
           width="w-[236px] lg:w-[400px]"
           backgroundColor="black"
           textcolor="white"
           text={"Add to cart"}
           border="softGray"
-        />
+        /> */}
+        <button onClick={()=> navigate("cart")}
+          className="h-[44px] lg:h-[52px] w-[236px] lg:w-[400px] bg-black text-white font-satoshi border border-softGray cursor-pointer 
+        text-center
+        transition 
+        duration-300 
+        rounded-[62px]"
+        >
+          Add to Cart
+        </button>
       </div>
     </div>
   );

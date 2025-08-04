@@ -9,14 +9,14 @@ import CategoriesPage from "./pages/CategoriesPage";
 import ScrollToTop from "./components/ScrollToTop";
 import Shop from "./pages/Shop";
 import Category from "./pages/Category";
+import YourCart from "./pages/cart/YourCart";
 
 function App() {
-
   return (
     <div className="max-w-[1440px] mx-auto">
-      <ScrollToTop/>
+      <ScrollToTop />
       <Topbar />
-      <Navbar/>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/shop" element={<Shop />} />
@@ -26,6 +26,7 @@ function App() {
         <Route path="/shop/:id" element={<ProductDetails />} />
         <Route path="/category" element={<Category />} />
         <Route path="/category/:category" element={<CategoriesPage />} />
+        <Route path="/cart" element={<YourCart />} />
         {/* <Route path="/related/:id" element={<ProductDetails />} /> */}
         {/* <Route path="/shop/:id/relatedProducts/:id" element={<ProductDetails />} /> */}
       </Routes>
