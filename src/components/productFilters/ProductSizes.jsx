@@ -1,6 +1,6 @@
 import { CheckIcon, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
-import Button from "./Buttons/Button";
+import Button from "../Buttons/Button";
 
 const sizes = [
   "XX-Small",

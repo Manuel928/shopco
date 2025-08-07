@@ -1,6 +1,6 @@
-import { images } from "../assets/assets";
-import Button from "./Buttons/Button";
-import DressStyle from "./DressStyle";
+import { images } from "../../assets/assets";
+import Button from "../Buttons/Button";
+import DressStyle from "../DressStyle";
 import PriceAccordion from "./PriceAccordion";
 import ProductColors from "./ProductColors";
 import ProductSizes from "./ProductSizes";

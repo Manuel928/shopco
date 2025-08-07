@@ -1,13 +1,19 @@
-import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Topbar from "../components/Topbar";
+import { Outlet } from "react-router-dom";
+import ScrollToTop from "../components/ScrollToTop";
 
-const MainLayout = ({ children }) => {
+const MainLayout = () => {
   return (
     <>
-      
-      <main className="max-w-[1440px] px-[16px] lg:px-[100px]">{children}</main>
+      <ScrollToTop />
+      <Topbar />
+      <Navbar />
+
+      <main>
+        <Outlet />
+      </main>
       <Footer />
     </>
   );

@@ -1,4 +1,4 @@
-import { useProduct } from "../components/ProductContext";
+import { useProduct } from "./context/ProductContext";
 
 const ProductImageInView = () => {
   const { productImageInView } = useProduct();
@@ -6,7 +6,7 @@ const ProductImageInView = () => {
   return (
     <img
       src={productImageInView}
-      className="object-cover w-full h-auto order-1 lg:order-2 rounded-xl"
+      className="object-cover lg:w-[444px] lg:h-[530px] order-1 lg:order-2 rounded-xl"
       alt="Product View"
     />
   );

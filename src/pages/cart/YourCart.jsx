@@ -2,7 +2,7 @@ import { Breadcrumb } from "antd";
 import { ArrowRight, TagIcon } from "lucide-react";
 import { cart } from "../../assets/assets";
 import CartCard from "./CartCard";
-import { ProductProvider } from "../../components/ProductContext";
+import { ProductProvider } from "../../components/context/ProductContext";
 
 const YourCart = () => {
   return (
@@ -16,10 +16,12 @@ const YourCart = () => {
           <div className="flex flex-col lg:flex-row items-start justify-between gap-[20px]">
             <div className="w-full lg:w-[715px] space-y-[24px] p-[24px] border border-softGray rounded-[20px]">
               <ProductProvider>
-                {cart.map((c) => (
+                {cart.map((c, index) => (
                   <>
                     <CartCard product={c} key={c.productName} />
-                    <hr className="text-[#0000001A]" />
+                    {index < cart.length - 1 && (
+                      <hr className="text-[#0000001A]" />
+                    )}
                   </>
                 ))}
               </ProductProvider>

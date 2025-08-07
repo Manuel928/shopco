@@ -4,9 +4,11 @@ import RelatedProducts from "../components/RelatedProducts";
 import LeftCoverImages from "../components/LeftCoverImages";
 import ProductImageInView from "../components/ProductImageInView";
 import ItemDetails from "../components/ItemDetails";
-import { ProductProvider } from "../components/ProductContext";
+import { ProductProvider } from "../components/context/ProductContext";
+import { useLoading } from "../components/context/LoadingSpinnerContext";
 
 const ProductDetails = () => {
+  const { isLoading } = useLoading();
   return (
     <ProductProvider>
       <div className="max-w-[1440px] px-[16px] lg:px-[100px]">
@@ -17,7 +19,7 @@ const ProductDetails = () => {
           <LeftCoverImages />
 
           {/* Selected Image */}
-          <ProductImageInView />
+          {<ProductImageInView />}
 
           {/* Details */}
           <ItemDetails />

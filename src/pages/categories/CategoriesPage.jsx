@@ -1,12 +1,15 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Pagination } from "antd";
-import { images, newArrivals, topSelling } from "../assets/assets";
-import ProductCard from "../components/Cards/ProductCard";
-import Breadcrumb from "../components/Breadcrumb";
-import ProductFilter from "../components/ProductFilter";
+import { images } from "../../assets/assets";
+import ProductCard from "../../components/Cards/ProductCard";
+import Breadcrumb from "../../components/Breadcrumb";
+import ProductFilter from "../../components/productFilters/ProductFilter";
 import { ChevronDown, XIcon } from "lucide-react";
-import ProductFilterMobile from "../components/ProductFilterMobile";
+import ProductFilterMobile from "../../components/productFilters/ProductFilterMobile";
+import axios from "axios";
+import { useLoading } from "../../components/context/LoadingSpinnerContext";
+import GlobalLoader from "../../components/GlobalLoader";
 
 // Provider
 const FilterContext = createContext();
@@ -15,20 +18,31 @@ const FilterContext = createContext();
 export const useFilter = () => useContext(FilterContext);
 const CategoriesPage = () => {
   const { category } = useParams();
-  const [productCategory, setProductCategory] = useState([]);
+  const [productCategory, setProductCategory] = useState(null);
   const [showMobileFilterOptions, setShowMobileFilterOptions] = useState(false);
+  const { isLoading, setIsLoading } = useLoading();
 
-  const getCategory = () => {
-    const combinedProducts = [...topSelling, ...newArrivals];
-    const foundCategories = combinedProducts.filter(
-      (c) => c.category.toLowerCase() === category.toLowerCase()
-    );
-    setProductCategory(foundCategories);
+  const baseUrl = import.meta.env.VITE_API_BASE_URL;
+
+  const getCategory = async () => {
+    try {
+      setIsLoading(true);
+      const response = await axios.get(
+        `${baseUrl}/products/category/${category}`
+      );
+      console.log(response.data.products);
+
+      setProductCategory(response.data.products);
+    } catch (error) {
+      console.log("Could not load the categories", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   useEffect(() => {
     getCategory();
-  }, [category]);
+  }, []);
 
   return (
     <>
@@ -62,10 +76,12 @@ const CategoriesPage = () => {
                 srcset=""
               />
             </div>
-            {productCategory.length > 0 ? (
+            {isLoading ? (
+              <GlobalLoader />
+            ) : productCategory === null ? null : productCategory.length > 0 ? (
               <div className="grid grid-cols-2 lg:grid-cols-3 gap-[20px]">
                 {productCategory.map((product) => (
-                  <ProductCard key={product._id} product={product} />
+                  <ProductCard key={product.id} product={product} />
                 ))}
               </div>
             ) : (

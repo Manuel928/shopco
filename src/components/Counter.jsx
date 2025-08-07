@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Minus, Plus } from "lucide-react";
-import { useProduct } from "./ProductContext";
+import { useProduct } from "./context/ProductContext";
 
 const Counter = () => {
   const [itemCount, setItemCount] = useState(1);

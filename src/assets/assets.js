@@ -1,26 +1,29 @@
-import SmallStar from "../assets/SmallStar.svg";
-import BigStar from "../assets/BigStar.svg";
-import VersaceLogo from "../assets/VersaceLogo.svg";
-import CalvinKlienLogo from "../assets/CalvinKlienLogo.svg";
-import gucciLogo from "../assets/gucciLogo.svg";
-import pradaLogo from "../assets/pradaLogo.svg";
-import zaraLogo from "../assets/zaraLogo.svg";
-import Shirt1 from "../assets/Shirt1.png";
-import SkinnyFitJeans from "../assets/SkinnyFitJeans.png";
-import CheckeredShirt from "../assets/CheckeredShirt.png";
-import StrippedTShirt from "../assets/StrippedTShirt.png";
-import VerticalStripShirt from "../assets/VerticalStripShirt.png";
-import CourageTShirt from "../assets/CourageTShirt.png";
-import LooseFitShorts from "../assets/LooseFitShorts.png";
-import FadedSkinnyJeans from "../assets/FadedSkinnyJeans.png";
-import Cover1 from "../assets/Cover1.png";
-import Cover2 from "../assets/Cover2.png";
-import Cover3 from "../assets/Cover3.png";
-import BlackTShirt from "../assets/BlackTShirt.png";
-import GradientShirt from "../assets/GradientShirt.png";
-import PoloWithTippings from "../assets/PoloWithTippings.png";
-import PoloWithTrims from "../assets/PoloWithTrims.png";
-import FilterIcon from "../assets/FilterIcon.svg";
+// svgs
+import SmallStar from "../assets/svgs/SmallStar.svg";
+import BigStar from "../assets/svgs/BigStar.svg";
+import VersaceLogo from "../assets/svgs/VersaceLogo.svg";
+import CalvinKlienLogo from "../assets/svgs/CalvinKlienLogo.svg";
+import gucciLogo from "../assets/svgs/gucciLogo.svg";
+import pradaLogo from "../assets/svgs/pradaLogo.svg";
+import zaraLogo from "../assets/svgs/zaraLogo.svg";
+import FilterIcon from "../assets/svgs/FilterIcon.svg";
+
+// pngs
+import Shirt1 from "../assets/images/Shirt1.png";
+import SkinnyFitJeans from "../assets/images/SkinnyFitJeans.png";
+import CheckeredShirt from "../assets/images/CheckeredShirt.png";
+import StrippedTShirt from "../assets/images/StrippedTShirt.png";
+import VerticalStripShirt from "../assets/images/VerticalStripShirt.png";
+import CourageTShirt from "../assets/images/CourageTShirt.png";
+import LooseFitShorts from "../assets/images/LooseFitShorts.png";
+import FadedSkinnyJeans from "../assets/images/FadedSkinnyJeans.png";
+import Cover1 from "../assets/images/Cover1.png";
+import Cover2 from "../assets/images/Cover2.png";
+import Cover3 from "../assets/images/Cover3.png";
+import BlackTShirt from "../assets/images/BlackTShirt.png";
+import GradientShirt from "../assets/images/GradientShirt.png";
+import PoloWithTippings from "../assets/images/PoloWithTippings.png";
+import PoloWithTrims from "../assets/images/PoloWithTrims.png";
 
 export const images = {
   SmallStar,

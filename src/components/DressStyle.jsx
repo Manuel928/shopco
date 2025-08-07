@@ -1,7 +1,7 @@
 import { ChevronDown, ChevronRight, ChevronUp } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import useFilter from "../pages/CategoriesPage";
+import useFilter from "../pages/categories/CategoriesPage";
 
 const DressStyle = () => {
   const [isOpen, setIsOpen] = useState(false);

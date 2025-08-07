@@ -1,9 +1,8 @@
-import { images } from "../assets/assets";
 import PriceAccordion from "./PriceAccordion";
 import ProductColors from "./ProductColors";
-import ProductSizes from "./ProductSizes";
-import DressStyle from "./DressStyle";
-import Button from "./Buttons/Button";
+import ProductSizes from "../productFilters/ProductSizes";
+import DressStyle from "../DressStyle"
+import Button from "../Buttons/Button";
 
 const ProductFilterMobile = () => {
   return (

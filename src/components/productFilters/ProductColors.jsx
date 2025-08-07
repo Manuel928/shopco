@@ -1,6 +1,6 @@
 import { CheckIcon, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
-import { isColorLight } from "../lib/isColorLight";
+import isColorLight from "../../lib/isColorLight"
 
 const colors = [
   "#00C12B",

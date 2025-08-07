@@ -7,9 +7,11 @@ import {
   ShoppingCartIcon,
   CircleUserRoundIcon,
 } from "lucide-react";
+import { useCartData } from "./context/CartContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { cartItems } = useCartData();
   return (
     <div className="mx-auto overflow-hidden max-w-[1440px] px-[16px] lg:px-[100px]">
       <div className="nav-container">
@@ -56,9 +58,16 @@ const Navbar = () => {
         </div>
 
         {/* Icons */}
-        <div className="col-span-1 flex items-center justify-end gap-4">
+        <div className="col-span-1 relative flex items-center justify-end gap-4">
           <SearchIcon className="md:hidden w-7 h-7" />
+
           <ShoppingCartIcon className="w-7 h-7 cursor-pointer" />
+          <div className=" p-2 h-[30px] rounded-[20px] flex items-center justify-center absolute top-4 right-12">
+            <span className="font-bold text-[14px] font-satoshi">
+              {cartItems}
+            </span>
+          </div>
+
           <CircleUserRoundIcon className="w-7 h-7 cursor-pointer" />
         </div>
       </div>

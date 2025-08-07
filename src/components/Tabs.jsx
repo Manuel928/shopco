@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import RatingAndReviews from "./RatingAndReviews";
-import { useProduct } from "./ProductContext";
+import { useProduct } from "./context/ProductContext";
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState("Product Details");
@@ -15,7 +15,7 @@ const Tabs = () => {
   const renderContent = () => {
     switch (activeTab) {
       case "Product Details":
-        return <p className="font-satoshi">{product.productDetails}</p>;
+        return <p className="font-satoshi">{product.description}</p>;
       case "Rating & Reviews":
         return <RatingAndReviews />;
       case "FAQs":

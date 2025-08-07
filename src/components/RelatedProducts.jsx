@@ -2,7 +2,7 @@ import { relatedProducts } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
 import { newArrivals, topSelling } from "../assets/assets";
 import { StarIcon } from "lucide-react";
-import { useProduct } from "./ProductContext";
+import { useProduct } from "./context/ProductContext";
 
 const RelatedProducts = () => {
   const navigate = useNavigate();

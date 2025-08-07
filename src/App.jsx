@@ -1,37 +1,38 @@
-import { useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
 import Home from "./pages/Home";
-import Topbar from "./components/Topbar";
-import Footer from "./components/Footer";
 import ProductDetails from "./pages/ProductDetails";
-import Navbar from "./components/Navbar";
-import CategoriesPage from "./pages/CategoriesPage";
-import ScrollToTop from "./components/ScrollToTop";
+import CategoriesPage from "./pages/categories/CategoriesPage";
 import Shop from "./pages/Shop";
-import Category from "./pages/Category";
+import Category from "./pages/categories/Category";
 import YourCart from "./pages/cart/YourCart";
+import MainLayout from "./layout/MainLayout";
+import NotFound from "./pages/NotFound";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<MainLayout />}>
+      <Route index element={<Home />} />
+      <Route path="/shop" element={<Shop />} />
+      <Route path="/shop/:id" element={<ProductDetails />} />
+      <Route path="/category" element={<Category />} />
+      <Route path="/category/:category" element={<CategoriesPage />} />
+      <Route path="/cart" element={<YourCart />} />
+
+      <Route path="*" element={<NotFound/>}/>
+    </Route>
+  )
+);
 
 function App() {
   return (
-    <div className="max-w-[1440px] mx-auto">
-      <ScrollToTop />
-      <Topbar />
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* <Route path="/shop" element={<Shop />} />
-        <Route path="/shop/:category" element={<Category />} />
-        <Route path="/shop/:category/:type" element={<ProductType />} /> */}
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/shop/:id" element={<ProductDetails />} />
-        <Route path="/category" element={<Category />} />
-        <Route path="/category/:category" element={<CategoriesPage />} />
-        <Route path="/cart" element={<YourCart />} />
-        {/* <Route path="/related/:id" element={<ProductDetails />} /> */}
-        {/* <Route path="/shop/:id/relatedProducts/:id" element={<ProductDetails />} /> */}
-      </Routes>
-      <Footer />
-    </div>
+    <>
+      <RouterProvider router={router} />
+    </>
   );
 }
 

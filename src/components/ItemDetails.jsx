@@ -2,24 +2,24 @@ import React, { useEffect, useState } from "react";
 import Button from "./Buttons/Button";
 import Counter from "./Counter";
 import { StarIcon } from "lucide-react";
-import { useProduct } from "./ProductContext";
+import { useProduct } from "./context/ProductContext";
 import { Link, useNavigate } from "react-router-dom";
 
 const ItemDetails = () => {
   const { product } = useProduct();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <div className="space-y-[20px] mt-[8px] lg:mt-0 order-3">
       <div className="space-y-[12px] lg:space-y-[14px]">
         <p className="font-IntegralCF w-[267px] lg:w-full font-bold text-[24px] lg:text-[36px]">
-          {product?.name}
+          {product?.title}
         </p>
 
         {/* Ratings */}
         <div className="flex justify-between gap-[11px] lg:gap-[13px] w-[127px] lg:w-[150px] items-center">
           <div className="flex gap-[4.44px] lg:gap-[5.31px] items-center">
-            {Array.from({ length: product?.stars }, (_, i) => (
+            {Array.from({ length: product?.rating }, (_, i) => (
               <StarIcon
                 className="w-[15.49px] lg:w-[18.47px]"
                 fill="#FFC633"
@@ -29,8 +29,7 @@ const ItemDetails = () => {
             ))}
           </div>
           <p className="font-satoshi text-[12px] lg:text-[14px]">
-            {product?.ratings.toFixed(1)}/
-            <span className="text-[#00000099]">5</span>
+            {product?.rating}/<span className="text-[#00000099]">5</span>
           </p>
         </div>
 
@@ -39,15 +38,10 @@ const ItemDetails = () => {
           <p className="font-bold text-[16px] font-satoshi lg:text-[20px]">
             ${product?.price}
           </p>
-          {product?.oldPrice && (
-            <p className="font-bold text-[16px] text-[#00000066] line-through decoration-[#00000066] font-satoshi lg:text-[20px]">
-              ${product?.oldPrice}
-            </p>
-          )}
-          {product?.discount && (
+          {product?.discountPercentage && (
             <div className="bg-[#FF33331A] py-[6px] px-[14px] rounded-[62px]">
               <p className="text-[10px] lg:text-[12px] font-satoshi font-medium text-[#FF3333]">
-                {product?.discount}%
+                -{product?.discountPercentage}%
               </p>
             </div>
           )}
@@ -128,7 +122,8 @@ const ItemDetails = () => {
           text={"Add to cart"}
           border="softGray"
         /> */}
-        <button onClick={()=> navigate("cart")}
+        <button
+          onClick={() => navigate("cart")}
           className="h-[44px] lg:h-[52px] w-[236px] lg:w-[400px] bg-black text-white font-satoshi border border-softGray cursor-pointer 
         text-center
         transition 
