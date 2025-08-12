@@ -2,8 +2,10 @@ import { ChevronDown, Link, FilterIcon } from "lucide-react";
 import Button from "./Buttons/Button";
 import { images, ratings } from "../assets/assets";
 import RatingAndReviewsCard from "./Cards/RatingAndReviewsCard";
+import { useProduct } from "./context/ProductContext";
 
 const RatingAndReviews = () => {
+  const { product } = useProduct();
   return (
     <div className="max-w-[1440px] flex flex-col justify-between">
       <div className="flex items-center justify-between">
@@ -36,9 +38,10 @@ const RatingAndReviews = () => {
 
       {/* Cards */}
       <div className="grid lg:grid-cols-2 gap-[20px] mt-[32px] mb-[36.42px]">
-        {ratings.map((r) => (
-          <RatingAndReviewsCard ratings={r} key={r.stars} />
+        {product.reviews.map((r) => (
+          <RatingAndReviewsCard ratings={r} key={r.reviewerName} />
         ))}
+        {/* {console.log(product.reviews)} */}
       </div>
       <Button
         backgroundColor="white"

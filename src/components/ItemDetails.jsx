@@ -1,18 +1,38 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Button from "./Buttons/Button";
 import Counter from "./Counter";
 import { StarIcon } from "lucide-react";
 import { useProduct } from "./context/ProductContext";
 import { Link, useNavigate } from "react-router-dom";
+import { useCartData } from "./context/CartContext";
 
 const ItemDetails = () => {
   const { product } = useProduct();
+  const { cartItemsCount, addToCart } = useCartData();
   const navigate = useNavigate();
+
+  const itemToAddToCart = useMemo(() => {
+    if (!product) return null;
+    const { id, thumbnail, price, discountPercentage, title } = product;
+    return {
+      id: id,
+      thumbnail: thumbnail,
+      price: price,
+      discountPercentage: discountPercentage,
+      title: title,
+    };
+  }, [product]);
+
+  function handleAddToCart() {
+    console.log(cartItemsCount);
+    
+    addToCart(itemToAddToCart);
+  }
 
   return (
     <div className="space-y-[20px] mt-[8px] lg:mt-0 order-3">
       <div className="space-y-[12px] lg:space-y-[14px]">
-        <p className="font-IntegralCF w-[267px] lg:w-full font-bold text-[24px] lg:text-[36px]">
+        <p className="font-IntegralCF font-bold text-[24px] lg:text-[36px]">
           {product?.title}
         </p>
 
@@ -112,26 +132,28 @@ const ItemDetails = () => {
         </div>
       </div>
       <hr className="text-[#0000001A]" />
-      <div className="flex items-center gap-[12px] lg:gap-[20px] mb-[50px] lg:mb-[80px]">
+      <div className="flex items-center justify-between gap-[12px] lg:gap-[20px] mb-[50px] lg:mb-[80px]">
         <Counter />
-        {/* <Button
-          height="h-[44px] lg:h-[52px]"
-          width="w-[236px] lg:w-[400px]"
-          backgroundColor="black"
-          textcolor="white"
-          text={"Add to cart"}
-          border="softGray"
-        /> */}
-        <button
-          onClick={() => navigate("cart")}
-          className="h-[44px] lg:h-[52px] w-[236px] lg:w-[400px] bg-black text-white font-satoshi border border-softGray cursor-pointer 
-        text-center
-        transition 
-        duration-300 
-        rounded-[62px]"
-        >
-          Add to Cart
-        </button>
+
+        {/* Add to cart and Proceed to checkout button */}
+        <div className="space-y-4 w-full flex flex-col items-center lg:items-end">
+          <button
+            onClick={handleAddToCart}
+            className="h-[44px] lg:h-[52px] w-[236px] lg:w-[400px] bg-black text-white font-satoshi border border-black cursor-pointer text-center transition duration-300 rounded-[62px]"
+          >
+            Add to Cart
+          </button>
+          {/* {cartItemsCount >= 1 && (
+            <button
+              onClick={()=> navigate("/cart")}
+              className="h-[44px] lg:h-[52px] w-[236px] lg:w-[400px] text-black font-satoshi border border-black shadow-xl cursor-pointer text-center transition duration-300 rounded-[62px]"
+            >
+              Proceed to Checkout
+            </button>
+          )} */}
+        </div>
+
+        {/* Add to cart and Proceed to checkout button end */}
       </div>
     </div>
   );

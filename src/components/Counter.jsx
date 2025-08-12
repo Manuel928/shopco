@@ -10,6 +10,7 @@ const Counter = () => {
     setItemCount(1);
   }, [product]);
 
+
   function decrement() {
     if (itemCount > 1) {
       setItemCount((prev) => prev - 1);
@@ -21,18 +22,28 @@ const Counter = () => {
     }
   }
 
+  function handleOnChange(e) {
+    const value = Number(e.target.value);
+    if (value >= 1 && value <= 10) {
+      setItemCount(value);
+    }
+  }
+
   return (
     <div className="bg-softGray w-[110px] h-[44px] lg:w-[170px] lg:h-[52px] items-center justify-between flex rounded-[62px] py-[12px] px-[16px] lg:py-[16px] lg:px-[20px]">
       <button onClick={decrement}>
-        <Minus className="w-4 lg:w-8" />
+        <Minus className="w-4 lg:w-5" />
       </button>
       <input
         type="number"
         value={itemCount}
+        onChange={handleOnChange}
+        min={1}
+        max={10}
         className="outline-none w-full text-center font-satoshi"
       />
       <button onClick={increment}>
-        <Plus className="w-4 lg:w-8" />
+        <Plus className="w-4 lg:w-5" />
       </button>
     </div>
   );

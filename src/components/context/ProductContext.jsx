@@ -30,6 +30,7 @@ export const ProductProvider = ({ children }) => {
       setIsLoading(false);
     }
   };
+  
 
   useEffect(() => {
     getProduct();

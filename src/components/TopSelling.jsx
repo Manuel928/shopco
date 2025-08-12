@@ -38,7 +38,7 @@ const TopSelling = () => {
   }
   return (
     <section className="pt-[50px] max-w-[1440px] mx-auto flex flex-col items-center lg:pt-[72px] px-[16px] lg:px-[100px]">
-      <p className="font-IntegralCF font-bold text-[24px] lg:text-[36px] text-center">
+      <p className="font-IntegralCF font-bold text-[24px] mb-[25px] lg:mb-[55px] lg:text-[36px] text-center">
         Top Selling
       </p>
 

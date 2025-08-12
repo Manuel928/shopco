@@ -6,7 +6,7 @@ const NotFound = () => {
   const navigate = useNavigate();
   return (
     <div className="max-w-[1440px] pt-[70px] pb-[178px] flex flex-col items-center gap-[50px] justify-between px-[16px] lg:px-[100px]">
-      <h1 className="font-satoshi font-bold text-[54px] text-center">
+      <h1 className="font-satoshi font-bold text-[36px] lg:text-[54px] text-center">
         The page you are looking for does not exist! ☹
       </h1>
 

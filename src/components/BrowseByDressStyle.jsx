@@ -13,7 +13,7 @@ const BrowseByDressStyle = () => {
         <div className="grid lg:grid-cols-3 items-center gap-[20px]">
           <div
             className="relative col-span-1 group w-[310px] h-[190px] rounded-[20px] cursor-pointer overflow-hidden"
-            onClick={() => navigate("/category/casual")}
+            onClick={() => navigate("/category/beauty")}
           >
             {/* Background layer */}
             <div className="absolute inset-0 bg-cover bg-no-repeat bg-left-top bg-[url('/Casual.png')] transition-transform duration-500 group-hover:scale-110"></div>
@@ -21,14 +21,14 @@ const BrowseByDressStyle = () => {
             {/* Content layer */}
             <div className="relative z-10 flex items-start px-[24px] pt-[16px] lg:px-[36px] lg:pt-[25px] h-full group-hover:bg-black/20 group-hover:duration-700 group-hover:transition-colors rounded-[20px]">
               <p className="font-bold font-satoshi text-[18px] lg:text-[24px] group-hover:text-white">
-                Casual
+                Beauty
               </p>
             </div>
           </div>
 
           <div
             className="relative col-span-2 group w-full h-[190px] rounded-[20px] cursor-pointer overflow-hidden"
-            onClick={() => navigate("/category/formal")}
+            onClick={() => navigate("/category/tops")}
           >
             {/* Background layer */}
             <div className="absolute inset-0 bg-cover bg-no-repeat bg-left-top bg-[url('/Formal.png')] transition-transform duration-500 group-hover:scale-110"></div>
@@ -36,7 +36,7 @@ const BrowseByDressStyle = () => {
             {/* Content layer */}
             <div className="relative z-10 flex items-start px-[24px] pt-[16px] lg:px-[36px] lg:pt-[25px] h-full group-hover:bg-black/20 group-hover:duration-700 group-hover:transition-colors rounded-[20px]">
               <p className="font-bold font-satoshi text-[18px] lg:text-[24px] group-hover:text-white">
-                Formal
+                Tops
               </p>
             </div>
           </div>
@@ -44,7 +44,7 @@ const BrowseByDressStyle = () => {
         <div className="grid lg:grid-cols-3 items-center gap-[20px]">
           <div
             className="relative col-span-2 group w-full h-[190px] rounded-[20px] cursor-pointer overflow-hidden"
-            onClick={() => navigate("/category/party")}
+            onClick={() => navigate("/category/skin-care")}
           >
             {/* Background layer */}
             <div className="absolute inset-0 bg-cover bg-no-repeat bg-left-top bg-[url('/Party.png')] transition-transform duration-500 group-hover:scale-110"></div>
@@ -52,13 +52,13 @@ const BrowseByDressStyle = () => {
             {/* Content layer */}
             <div className="relative z-10 flex items-start px-[24px] pt-[16px] lg:px-[36px] lg:pt-[25px] h-full group-hover:bg-black/20 group-hover:duration-700 group-hover:transition-colors rounded-[20px]">
               <p className="font-bold font-satoshi text-[18px] lg:text-[24px] group-hover:text-white">
-                Party
+                Skin Care
               </p>
             </div>
           </div>
           <div
             className="relative col-span-1 group w-[310px] h-[190px] rounded-[20px] cursor-pointer overflow-hidden"
-            onClick={() => navigate("/category/gym")}
+            onClick={() => navigate("/category/mens-shirts")}
           >
             {/* Background layer */}
             <div className="absolute inset-0 bg-cover bg-no-repeat bg-left-top bg-[url('/Gym.png')] transition-transform duration-500 group-hover:scale-110"></div>
@@ -66,7 +66,7 @@ const BrowseByDressStyle = () => {
             {/* Content layer */}
             <div className="relative z-10 flex items-start px-[24px] pt-[16px] lg:px-[36px] lg:pt-[25px] h-full group-hover:bg-black/20 group-hover:duration-700 group-hover:transition-colors rounded-[20px]">
               <p className="font-bold font-satoshi text-[18px] lg:text-[24px] group-hover:text-white">
-                Gym
+                Mens Shirt
               </p>
             </div>
           </div>

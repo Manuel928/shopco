@@ -9,17 +9,17 @@ const ProductCard = ({ product }) => {
     scrollTo(0, 0);
   }
   return (
-    <div className="flex flex-col gap-[10px] lg:gap-[16px] h-full pt-[32px] lg:pt-[55px] overflow-visible">
-      <div className="bg-pearlGray cursor-pointer group lg:h-[298px] rounded-[20px]">
+    <div className="flex flex-col gap-[10px] lg:gap-[16px] h-full overflow-visible">
+      <div className="bg-pearlGray cursor-pointer group rounded-[20px] p-4">
         <img
           src={product?.thumbnail}
           alt={product?.title}
-          className="group-hover:scale-x-105 transition h-full w-full duration-200 rounded-[20px] object-cover"
+          className="group-hover:scale-x-105 transition h-full w-full duration-200 rounded-[20px] object-fit"
           onClick={handleNavigation}
         />
       </div>
       <div className="flex flex-col gap-[4px] pb-[24px] lg:pb-[36px] lg:gap-[8px]">
-        <p className="font-bold font-satoshi text-[14px] lg:text-[16px]">
+        <p className="font-bold truncate font-satoshi text-[14px] lg:text-[16px]">
           {product?.title}
         </p>
         {/* Stars + rating */}

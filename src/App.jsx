@@ -12,6 +12,7 @@ import Category from "./pages/categories/Category";
 import YourCart from "./pages/cart/YourCart";
 import MainLayout from "./layout/MainLayout";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "./components/ScrollToTop";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,9 +22,9 @@ const router = createBrowserRouter(
       <Route path="/shop/:id" element={<ProductDetails />} />
       <Route path="/category" element={<Category />} />
       <Route path="/category/:category" element={<CategoriesPage />} />
-      <Route path="/cart" element={<YourCart />} />
+      {/* <Route path="/cart" element={<YourCart />} /> */}
 
-      <Route path="*" element={<NotFound/>}/>
+      <Route path="*" element={<NotFound />} />
     </Route>
   )
 );
