@@ -43,7 +43,7 @@ const Navbar = () => {
                 <Link to="/shop/on-sale">On Sale</Link>
               </li>
               <li>
-                <Link to="/shop/new-arrivals">New Arrivals</Link>
+                <a href="/#newArrivals">New Arrivals</a>
               </li>
               <li>
                 <Link to="/shop/brands">Brands</Link>
@@ -91,7 +91,6 @@ const Navbar = () => {
             onClick={() => setIsOpen(false)}
           />
 
-          {/* Filter panel - does not cover navbar */}
           <div
             ref={navRef}
             className="fixed left-0 bottom-0 w-3/4 h-full bg-white px-[19px] shadow-2xl border flex flex-col z-50"
@@ -132,16 +131,13 @@ const Navbar = () => {
                   On Sale
                 </Link>
               </li>
-              <li>
-                <Link
-                  onClick={() => {
-                    setIsOpen(false);
-                    scrollTo(0, 0);
-                  }}
-                  to="/shop/new-arrivals"
-                >
-                  New Arrivals
-                </Link>
+              <li
+                onClick={() => {
+                  setIsOpen(false);
+                  scrollTo(0, 0);
+                }}
+              >
+                <a href="/#newArrivals">New Arrivals</a>
               </li>
               <li>
                 <Link

@@ -10,7 +10,7 @@ const BrowseByDressStyle = () => {
 
       {/* Styles */}
       <div className="space-y-[20px]">
-        <div className="grid lg:grid-cols-3 items-center gap-[20px]">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 items-center gap-[20px]">
           <div
             className="relative col-span-1 group w-[310px] h-[190px] rounded-[20px] cursor-pointer overflow-hidden"
             onClick={() => navigate("/category/beauty")}
@@ -27,7 +27,7 @@ const BrowseByDressStyle = () => {
           </div>
 
           <div
-            className="relative col-span-2 group w-full h-[190px] rounded-[20px] cursor-pointer overflow-hidden"
+            className="relative md:col-span-1 lg:col-span-2 group w-full h-[190px] rounded-[20px] cursor-pointer overflow-hidden"
             onClick={() => navigate("/category/tops")}
           >
             {/* Background layer */}
@@ -41,9 +41,9 @@ const BrowseByDressStyle = () => {
             </div>
           </div>
         </div>
-        <div className="grid lg:grid-cols-3 items-center gap-[20px]">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 items-center gap-[20px]">
           <div
-            className="relative col-span-2 group w-full h-[190px] rounded-[20px] cursor-pointer overflow-hidden"
+            className="relative md:col-span-1 lg:col-span-2 group w-full h-[190px] rounded-[20px] cursor-pointer overflow-hidden"
             onClick={() => navigate("/category/skin-care")}
           >
             {/* Background layer */}

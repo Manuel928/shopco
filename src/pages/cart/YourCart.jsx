@@ -7,7 +7,8 @@ import { useCartData } from "../../components/context/CartContext";
 import CartEmpty from "./CartEmpty";
 
 const YourCart = () => {
-  const { isCartVisible, cartRef, cartItems } = useCartData();
+  const { isCartVisible, cartRef, totalPrice, cartItems } = useCartData();
+
   return (
     <>
       <div
@@ -31,7 +32,7 @@ const YourCart = () => {
             />
           </div>
           {cartItems.length > 0 ? (
-            <div className="grid lg:grid-cols-2 items-start justify-between gap-[20px]">
+            <div className="grid md:grid-cols-2 items-start justify-between gap-[20px]">
               <div className="space-y-[24px] p-[24px] border border-softGray rounded-[20px]">
                 <ProductProvider>
                   {cartItems.map((c, index) => (
@@ -52,11 +53,13 @@ const YourCart = () => {
                   <div className="flex flex-col gap-[20px]">
                     <div className="flex items-center justify-between">
                       <p>Subtotal</p>
-                      <p className="font-bold">$565</p>
+                      <p className="font-bold">${totalPrice.toFixed(2)}</p>
                     </div>
                     <div className="flex items-center justify-between">
                       <p>Discount (-20%)</p>
-                      <p className="text-cherryRed font-bold">$-113</p>
+                      <p className="text-cherryRed font-bold">
+                        -$
+                      </p>
                     </div>
                     <div className="flex items-center justify-between">
                       <p>Delivery Fee</p>
@@ -65,7 +68,8 @@ const YourCart = () => {
                     <hr className="text-[#0000001A]" />
                     <div className="flex items-center justify-between">
                       <p className="font-medium">Total</p>
-                      <p className="font-bold">$573</p>
+
+                      <p className="font-bold">${totalPrice.toFixed(2)}</p>
                     </div>
 
                     <div className="flex flex-col lg:flex-row justify-between gap-[12px]">

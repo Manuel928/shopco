@@ -81,20 +81,22 @@ const CategoriesPage = () => {
         <div className="flex gap-[20px] pt-[24px]">
           <ProductFilter />
           <div className="flex flex-col">
-            <div className="flex items-center justify-between">
-              <div className="flex lg:grid lg:grid-cols-2 mb-[25px] gap-[8px] lg:gap-16 items-center justify-between">
+            <div className="flex items-center justify-between mb-[25px]">
+              <div className="flex lg:grid lg:grid-cols-2 gap-[8px] lg:gap-0 items-center justify-between">
                 <h2 className="text-[18px] lg:text-[24px] font-satoshi font-bold">
                   {category.charAt(0).toUpperCase() + category.slice(1)}
                 </h2>
 
                 <div className="flex items-center gap-[7px] justify-between text-sm font-satoshi">
                   <p className="text-[#00000099]">
-                    Showing 1-10 of 100 Products
+                    Showing 1-{currentProducts.length} of{" "}
+                    {productCategory?.length} Products
                   </p>
+
                   <div className="text-[#00000099] gap-1 hidden lg:flex items-center justify-between">
                     <p>Sort by:</p>
                     <select
-                      className="font-bold "
+                      className="font-bold"
                       value={sortOption}
                       onChange={(e) => setSortOption(e.target.value)}
                       id=""

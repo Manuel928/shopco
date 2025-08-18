@@ -21,7 +21,7 @@ const KpiBlock = () => {
             {index < kpis.length - 1 && (
               <hr
                 className={`${
-                  index === 1 ? "hidden lg:flex" : "flex"
+                  index === 1 ? "hidden md:flex" : "flex"
                 } text-[#0000001A] w-[52px] rotate-[90deg]`}
               />
             )}

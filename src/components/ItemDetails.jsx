@@ -8,7 +8,7 @@ import { useCartData } from "./context/CartContext";
 
 const ItemDetails = () => {
   const { product } = useProduct();
-  const { cartItemsCount, addToCart } = useCartData();
+  const { quantities, cartItemsCount, addToCart } = useCartData();
   const navigate = useNavigate();
 
   const itemToAddToCart = useMemo(() => {
@@ -20,12 +20,14 @@ const ItemDetails = () => {
       price: price,
       discountPercentage: discountPercentage,
       title: title,
+      quantities: quantities,
     };
   }, [product]);
+  console.log(itemToAddToCart);
 
   function handleAddToCart() {
     console.log(cartItemsCount);
-    
+
     addToCart(itemToAddToCart);
   }
 

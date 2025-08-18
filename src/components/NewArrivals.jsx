@@ -9,10 +9,11 @@ import Button from "./Buttons/Button";
 import GlobalLoader from "./GlobalLoader";
 import axios from "axios";
 import { useLoading } from "./context/LoadingSpinnerContext";
+import { useNavigate } from "react-router-dom";
 
 const NewArrivals = () => {
+  const navigate = useNavigate();
   const [products, setProducts] = useState();
-  const [viewMore, setViewMore] = useState(false);
   const { isLoading, setIsLoading } = useLoading();
 
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -33,8 +34,8 @@ const NewArrivals = () => {
     getProducts();
   }, []);
 
-  function handleViewMoreToggle() {
-    setViewMore(!viewMore);
+  function handleNavigate() {
+    navigate("/shop")
   }
 
   if (isLoading) {
@@ -42,7 +43,7 @@ const NewArrivals = () => {
   }
 
   return (
-    <section className="pt-[50px] max-w-[1440px] mx-auto flex flex-col items-center lg:pt-[72px] px-[16px] lg:px-[100px]">
+    <section id="newArrivals" className="pt-[50px] max-w-[1440px] mx-auto flex flex-col items-center lg:pt-[72px] px-[16px] lg:px-[100px]">
       <p className="font-IntegralCF font-bold text-[24px] mb-[25px] lg:mb-[55px] lg:text-[36px] text-center">
         New Arrivals
       </p>
@@ -58,7 +59,7 @@ const NewArrivals = () => {
             {products?.slice(0, 4).map((product) => (
               <CarouselItem
                 key={product?.id}
-                className="basis-1/2 md:basis-1/2 lg:basis-1/4 items-center"
+                className="basis-1/2 md:basis-1/3 lg:basis-1/4 items-center"
               >
                 <ProductCard product={product} />
               </CarouselItem>
@@ -70,48 +71,13 @@ const NewArrivals = () => {
       )}
 
       <Button
-        onClick={handleViewMoreToggle}
+        onClick={handleNavigate}
         text="View more"
         align="self-center"
         backgroundColor="white"
         border="softGray"
         textcolor="black"
-        additionalClasses={
-          viewMore
-            ? "hidden"
-            : "flex items-center justify-center transition-all duration-300"
-        }
       ></Button>
-
-      {viewMore && (
-        <>
-          <Carousel
-            opts={{
-              align: "start",
-            }}
-            className="w-full pb-[24px] lg:pb-[36px]"
-          >
-            <CarouselContent>
-              {products?.slice(12, 16).map((product) => (
-                <CarouselItem
-                  key={product?.id}
-                  className="basis-1/2 md:basis-1/2 lg:basis-1/4"
-                >
-                  <ProductCard product={product} />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
-          <Button
-            onClick={handleViewMoreToggle}
-            text="View less"
-            align="self-center"
-            backgroundColor="white"
-            border="softGray"
-            textcolor="black"
-          ></Button>
-        </>
-      )}
     </section>
   );
 };

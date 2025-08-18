@@ -1,10 +1,12 @@
 import { DeleteIcon, Trash2 } from "lucide-react";
 import React from "react";
 import Counter from "../../components/Counter";
+import { useCartData } from "../../components/context/CartContext";
 
 const CartCard = ({ product }) => {
+  const { removeFromCart } = useCartData();
   return (
-    <div className="w-full flex items-center justify-between">
+    <div className="w-full flex items-center justify-between gap-[67px]">
       <div className="flex items-start gap-[16px]">
         <img
           src={product.thumbnail}
@@ -31,8 +33,13 @@ const CartCard = ({ product }) => {
       </div>
 
       <div className="flex flex-col items-end space-y-[56px] justify-between">
-        <Trash2 className="cursor-pointer" color="red" size={22} />
-        <Counter />
+        <Trash2
+          onClick={() => removeFromCart(product.id)}
+          className="cursor-pointer"
+          color="red"
+          size={22}
+        />
+        <Counter itemId={product.id} />
       </div>
     </div>
   );

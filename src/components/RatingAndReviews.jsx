@@ -1,31 +1,48 @@
-import { ChevronDown, Link, FilterIcon } from "lucide-react";
 import Button from "./Buttons/Button";
-import { images, ratings } from "../assets/assets";
+import { images } from "../assets/assets";
 import RatingAndReviewsCard from "./Cards/RatingAndReviewsCard";
 import { useProduct } from "./context/ProductContext";
+import { useState } from "react";
 
 const RatingAndReviews = () => {
-  const { product } = useProduct();
+  const { product } = useProduct(null);
+  const [sortOption, setSortOption] = useState("latest");
+
+  const sortedReviews = product?.reviews
+    ? [...product.reviews].sort((a, b) => {
+        if (sortOption === "latest") {
+          return new Date(b.date) - new Date(a.date);
+        } else if (sortOption === "oldest") {
+          return new Date(a.date) - new Date(b.date);
+        }
+        return 0;
+      })
+    : [];
+
   return (
     <div className="max-w-[1440px] flex flex-col justify-between">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-[8px]">
-          <p className="font-satoshi font-bold">All Reviews</p>{" "}
+          <p className="font-satoshi font-bold">All Reviews</p>
           <span className="text-[#00000099] mb-1.5">
-            <sub>(451)</sub>
+            <sub>({product?.reviews?.length || 0})</sub>
           </span>
         </div>
+
         <div className="flex items-center gap-[10px] justify-between">
           <img
             src={images.FilterIcon}
-            className="bg-softGray rounded-[62px] px-[16px] py-[20px] object-cover"
-            alt=""
-            srcset=""
+            className="bg-softGray rounded-[62px] px-[12px] py-[12px] object-cover"
+            alt="Filter"
           />
-          <button className="hidden md:flex group group-hover:cursor-pointer font-satoshi font-medium items-center bg-softGray justify-center rounded-[62px] gap-[4px] w-[120px] h-[48px]">
-            Latest
-            <ChevronDown />
-          </button>
+          <select
+            className="h-[48px] font-satoshi text-center bg-softGray rounded-[62px] w-[120px]"
+            value={sortOption}
+            onChange={(e) => setSortOption(e.target.value)}
+          >
+            <option value="latest">Latest</option>
+            <option value="oldest">Oldest</option>
+          </select>
           <Button
             text={"Write a review"}
             backgroundColor="black"
@@ -36,13 +53,13 @@ const RatingAndReviews = () => {
         </div>
       </div>
 
-      {/* Cards */}
+      {/* Review Cards */}
       <div className="grid lg:grid-cols-2 gap-[20px] mt-[32px] mb-[36.42px]">
-        {product.reviews.map((r) => (
+        {sortedReviews.map((r) => (
           <RatingAndReviewsCard ratings={r} key={r.reviewerName} />
         ))}
-        {/* {console.log(product.reviews)} */}
       </div>
+
       <Button
         backgroundColor="white"
         textcolor="black"
@@ -51,9 +68,10 @@ const RatingAndReviews = () => {
         text={"Load More Reviews"}
         width="w-[195px] lg:w-[230px]"
         height="h-[47px] lg:h-[52px]"
-      ></Button>
+      />
     </div>
   );
 };
+
 
 export default RatingAndReviews;

@@ -9,10 +9,11 @@ import Button from "./Buttons/Button";
 import axios from "axios";
 import { useLoading } from "./context/LoadingSpinnerContext";
 import GlobalLoader from "./GlobalLoader";
+import { useNavigate } from "react-router-dom";
 
 const TopSelling = () => {
+  const navigate = useNavigate();
   const [products, setProducts] = useState();
-  const [viewMore, setViewMore] = useState(false);
   const { isLoading, setIsLoading } = useLoading();
 
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -33,8 +34,8 @@ const TopSelling = () => {
     getProducts();
   }, []);
 
-  function handleViewMoreToggle() {
-    setViewMore(!viewMore);
+  function handleNavigate() {
+    navigate("/shop");
   }
   return (
     <section className="pt-[50px] max-w-[1440px] mx-auto flex flex-col items-center lg:pt-[72px] px-[16px] lg:px-[100px]">
@@ -52,7 +53,7 @@ const TopSelling = () => {
           {products?.slice(16, 20).map((product) => (
             <CarouselItem
               key={product?.id}
-              className="basis-1/2 md:basis-1/2 lg:basis-1/4"
+              className="basis-1/2 md:basis-1/3 lg:basis-1/4"
             >
               {isLoading ? <GlobalLoader /> : <ProductCard product={product} />}
             </CarouselItem>
@@ -61,48 +62,13 @@ const TopSelling = () => {
       </Carousel>
 
       <Button
-        onClick={handleViewMoreToggle}
+        onClick={handleNavigate}
         text="View more"
         align="self-center"
         backgroundColor="white"
         border="softGray"
         textcolor="black"
-        additionalClasses={
-          viewMore
-            ? "hidden"
-            : "flex items-center justify-center transition-all duration-300"
-        }
       ></Button>
-
-      {viewMore && (
-        <>
-          <Carousel
-            opts={{
-              align: "start",
-            }}
-            className="w-full pb-[24px] lg:pb-[36px]"
-          >
-            <CarouselContent>
-              {products?.slice(21, 25).map((product) => (
-                <CarouselItem
-                  key={product?.id}
-                  className="basis-1/2 md:basis-1/2 lg:basis-1/4"
-                >
-                  <ProductCard product={product} />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
-          <Button
-            onClick={handleViewMoreToggle}
-            text="View less"
-            align="self-center"
-            backgroundColor="white"
-            border="softGray"
-            textcolor="black"
-          ></Button>
-        </>
-      )}
     </section>
   );
 };
