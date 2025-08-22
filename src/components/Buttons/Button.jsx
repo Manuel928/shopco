@@ -8,7 +8,8 @@ const Button = ({
   height = "h-[52px]", // Tailwind class
   align = "self-start",
   additionalClasses = "",
-  onClick
+  buttonType="",
+  onClick,
 }) => {
   const bgColor = {
     black: "bg-black",
@@ -41,7 +42,8 @@ const Button = ({
 
   return (
     <button
-    onClick={onClick}
+      type={buttonType}
+      onClick={onClick}
       className={`
         ${bgClass} 
         ${textClass} 

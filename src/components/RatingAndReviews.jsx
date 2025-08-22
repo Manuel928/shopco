@@ -36,7 +36,7 @@ const RatingAndReviews = () => {
             alt="Filter"
           />
           <select
-            className="h-[48px] font-satoshi text-center bg-softGray rounded-[62px] w-[120px]"
+            className="h-[48px] hidden md:flex font-satoshi text-center bg-softGray rounded-[62px] w-[120px]"
             value={sortOption}
             onChange={(e) => setSortOption(e.target.value)}
           >

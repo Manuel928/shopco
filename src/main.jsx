@@ -6,12 +6,17 @@ import { BrowserRouter } from "react-router-dom";
 import { LoadingProvider } from "./components/context/LoadingSpinnerContext.jsx";
 import CartProvider from "./components/context/CartContext.jsx";
 import YourCart from "./pages/cart/YourCart.jsx";
+import FetchAllProducts from "./components/context/FetchAllProducts.jsx";
 
 createRoot(document.getElementById("root")).render(
-  <LoadingProvider>
-    <CartProvider>
-      <YourCart />
-      <App />
-    </CartProvider>
-  </LoadingProvider>
+  <BrowserRouter>
+    <LoadingProvider>
+      <CartProvider>
+        <YourCart />
+        <FetchAllProducts>
+          <App />
+        </FetchAllProducts>
+      </CartProvider>
+    </LoadingProvider>
+  </BrowserRouter>
 );

@@ -1,49 +1,23 @@
 import Breadcrumb from "../components/Breadcrumb";
 import ProductCard from "../components/Cards/ProductCard";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
-import axios from "axios";
 import GlobalLoader from "../components/GlobalLoader";
-import Button from "../components/Buttons/Button";
-import { useLoading } from "../components/context/LoadingSpinnerContext";
 import { useEffect, useState } from "react";
 import { Pagination } from "antd";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { useFetchAllProducts } from "../components/context/FetchAllProducts";
 
 const Shop = () => {
-  const [products, setProducts] = useState();
-  const { isLoading, setIsLoading } = useLoading();
+  const { isLoading, allProducts } = useFetchAllProducts();
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 8;
 
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
-
-  const getProducts = async () => {
-    try {
-      setIsLoading(true);
-      const response = await axios.get(`${API_BASE_URL}/products`);
-      setProducts(response.data.products);
-    } catch (error) {
-      console.error("Failed to fetch products:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    getProducts();
-  }, []);
-
   useEffect(() => {
     setCurrentPage(1);
-  }, [products]);
+  }, [allProducts]);
 
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex = startIndex + pageSize;
-  const slicedShopItems = products?.slice(startIndex, endIndex);
+  const slicedShopItems = allProducts?.slice(startIndex, endIndex);
 
   return (
     <>
@@ -76,7 +50,7 @@ const Shop = () => {
           <Pagination
             current={currentPage}
             pageSize={pageSize}
-            total={products?.length}
+            total={allProducts?.length}
             onChange={(page) => setCurrentPage(page)}
             showSizeChanger={false}
             className="flex items-center justify-between gap-4"
@@ -100,10 +74,10 @@ const Shop = () => {
           <button
             onClick={() =>
               setCurrentPage((prev) =>
-                Math.min(prev + 1, Math.ceil(products?.length / pageSize))
+                Math.min(prev + 1, Math.ceil(allProducts?.length / pageSize))
               )
             }
-            disabled={currentPage === Math.ceil(products?.length / pageSize)}
+            disabled={currentPage === Math.ceil(allProducts?.length / pageSize)}
             className="flex items-center font-satoshi font-semibold gap-[8px] px-4 py-1.5 rounded-[8px] bg-white border hover:bg-black/10 transition duration-200 disabled:opacity-50 focus:outline-none focus:ring-0"
           >
             <span className="hidden md:flex">Next</span>

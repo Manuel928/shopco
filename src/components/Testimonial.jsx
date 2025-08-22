@@ -6,34 +6,12 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { LucideArrowLeft, LucideArrowRight } from "lucide-react";
-import { useLoading } from "./context/LoadingSpinnerContext";
-import GlobalLoader from "./GlobalLoader";
-import axios from "axios";
+import { useFetchAllProducts } from "./context/FetchAllProducts";
 
 const Testimonial = () => {
   const [embla, setEmbla] = useState(null);
-  const [testimonials, setTestimonials] = useState();
-  const { isLoading, setIsLoading } = useLoading();
-
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
-
-  const getTestimonials = async () => {
-    try {
-      setIsLoading(true);
-      const response = await axios.get(`${API_BASE_URL}/products`);
-      const allReviews = response.data.products.flatMap((p) => p.reviews);
-
-      setTestimonials(allReviews);
-    } catch (error) {
-      console.error("Failed to fetch products:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    getTestimonials();
-  }, []);
+  const { allProducts } = useFetchAllProducts();
+  const allReviews = allProducts?.flatMap((p) => p.reviews);
   return (
     <>
       <div className="flex flex-col pt-[50px] pb-[140px] lg:pb-[178px] overflow-visible lg:pt-[80px] max-w-[1440px] px-[16px] lg:px-[100px]">
@@ -65,9 +43,12 @@ const Testimonial = () => {
           className="mt-[24px] lg:mt-[40px]"
         >
           <CarouselContent>
-            {testimonials?.slice(0, 8).map((t) => (
-              <CarouselItem key={t.text} className="md:basis-1/2 lg:basis-1/3">
-                <TestimonialCard testimonial={t} key={t.reviewerName} />
+            {allReviews?.slice(0, 8).map((t) => (
+              <CarouselItem
+                key={t.reviewerEmail}
+                className="md:basis-1/2 lg:basis-1/3"
+              >
+                <TestimonialCard testimonial={t} />
               </CarouselItem>
             ))}
           </CarouselContent>

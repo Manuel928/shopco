@@ -11,7 +11,10 @@ const ProductDetails = () => {
   const { isLoading } = useLoading();
   return (
     <ProductProvider>
-      <div className="max-w-[1440px] px-[16px] lg:px-[100px]">
+      <div
+        className="transition-opacity duration-300 max-w-[1440px] px-[16px] lg:px-[100px]"
+        style={{ opacity: isLoading ? 0.5 : 1 }}
+      >
         <Breadcrumb />
 
         <div className="flex flex-col mt-[36px] h-full lg:items-start lg:flex-row gap-y-[12px] gap-x-[40px]">

@@ -1,6 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { newArrivals, topSelling } from "../../assets/assets";
 import axios from "axios";
 import { useLoading } from "./LoadingSpinnerContext";
 import GlobalLoader from "../GlobalLoader";
@@ -34,7 +33,7 @@ export const ProductProvider = ({ children }) => {
 
   useEffect(() => {
     getProduct();
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     if (product?.images?.length) {

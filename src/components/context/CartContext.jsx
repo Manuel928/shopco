@@ -1,4 +1,5 @@
 import { useState, createContext, useContext, useEffect, useRef } from "react";
+import { addedToCartToast, alreadyInCartToast } from "../toasts/toasts";
 
 const CartContext = createContext();
 export const useCartData = () => useContext(CartContext);
@@ -42,32 +43,27 @@ const CartProvider = ({ children }) => {
 
   // calculate total price
   const totalPrice = cartItems.reduce(
-    (acc, currentItem) => acc + currentItem.price * currentItem.quantities.quantities,
+    (acc, currentItem) =>
+      acc + currentItem.price * currentItem.quantities.quantities,
     0
   );
+
 
   // Add to cart
   const addToCart = (product) => {
     setCartItems((prevItems) => {
       const existingItem = prevItems.find((item) => item.id === product.id);
       if (existingItem) {
-        // Increase quantity if product is already in cart
-        return prevItems.map((item) =>
-          item.id === product.id
-            ? { ...item, quantities: item.quantities.quantities + 1 }
-            : item
-        );
+        alreadyInCartToast();
+        return prevItems;
       }
-      // New product ? start with quantity = 1
-      return [{ ...product, quantities }, ...prevItems];
+      
+      // Add new products to cart
+      addedToCartToast();
+      cartRef.current.style.right = "0";
+      isCartVisible.current = true;
+      return [{ ...product, quantities: { quantities: 1 } }, ...prevItems];
     });
-
-    // if (!isCartVisible.current && cartRef.current) {
-    //   cartRef.current.style.right = '0';
-    //   isCartVisible.current = true;
-    // }
-    cartRef.current.style.right = "0";
-    isCartVisible.current = true;
   };
 
   // remove from cart

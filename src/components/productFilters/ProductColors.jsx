@@ -1,21 +1,9 @@
 import { CheckIcon, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
-import isColorLight from "../../lib/isColorLight"
+import isColorLight from "../../lib/isColorLight";
+import colors from "./Colors";
 
-const colors = [
-  "#00C12B",
-  "#F50606",
-  "#F5DD06",
-  "#F57906",
-  "#06CAF5",
-  "#063AF5",
-  "#7D06F5",
-  "#F506A4",
-  "#FFFFFF",
-  "#000000",
-];
-
-const ProductColors = () => {
+const ProductColors = ({ starting, ending }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedColorIndex, setSelectedColorIndex] = useState(null);
   function handleToggle() {
@@ -37,8 +25,8 @@ const ProductColors = () => {
       </div>
       {isOpen && (
         <div className="grid gap-[15.5px] grid-cols-7 lg:grid-cols-5 justify-between">
-          {colors.map((color, i) => {
-            const isLight = isColorLight(color)
+          {colors.slice(starting, ending).map((color, i) => {
+            const isLight = isColorLight(color);
             return (
               <div
                 onClick={() => handleShowCheckMark(i)}

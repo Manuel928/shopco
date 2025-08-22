@@ -113,6 +113,7 @@ const CategoriesPage = () => {
                 </div>
               </div>
               <img
+                loading="lazy"
                 onClick={() => setShowMobileFilterOptions(true)}
                 src={images.FilterIcon}
                 className="rounded-[62px] lg:hidden object-cover"

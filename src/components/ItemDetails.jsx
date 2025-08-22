@@ -1,15 +1,16 @@
 import React, { useEffect, useMemo, useState } from "react";
 import Button from "./Buttons/Button";
 import Counter from "./Counter";
-import { StarIcon } from "lucide-react";
+import { CheckIcon, StarIcon } from "lucide-react";
 import { useProduct } from "./context/ProductContext";
-import { Link, useNavigate } from "react-router-dom";
 import { useCartData } from "./context/CartContext";
+import colors from "./productFilters/Colors";
+import isColorLight from "../lib/isColorLight";
 
 const ItemDetails = () => {
+  const [selectedColorIndex, setSelectedColorIndex] = useState(null);
   const { product } = useProduct();
   const { quantities, cartItemsCount, addToCart } = useCartData();
-  const navigate = useNavigate();
 
   const itemToAddToCart = useMemo(() => {
     if (!product) return null;
@@ -23,14 +24,15 @@ const ItemDetails = () => {
       quantities: quantities,
     };
   }, [product]);
-  console.log(itemToAddToCart);
 
   function handleAddToCart() {
-    console.log(cartItemsCount);
+    // console.log(cartItemsCount);
 
     addToCart(itemToAddToCart);
   }
-
+  const handleShowCheckMark = (index) => {
+    setSelectedColorIndex(index);
+  };
   return (
     <div className="space-y-[20px] mt-[8px] lg:mt-0 order-3">
       <div className="space-y-[12px] lg:space-y-[14px]">
@@ -81,10 +83,22 @@ const ItemDetails = () => {
         <p className="text-[#00000099] font-satoshi text-[14px] lg:text-[16px]">
           Select colors
         </p>
-        <div className="flex gap-4">
-          <div className="w-7 h-7 bg-green-950 rounded-full"></div>
-          <div className="w-7 h-7 bg-pink-400 rounded-full"></div>
-          <div className="w-7 h-7 bg-amber-700 rounded-full"></div>
+        <div className="flex gap-[15.5px] items-center">
+          {colors.slice(3, 6).map((color, i) => {
+            const isLight = isColorLight(color);
+            return (
+              <div
+                onClick={() => handleShowCheckMark(i)}
+                style={{ backgroundColor: color }}
+                key={i}
+                className="w-[27px] h-[27px] border border-[#00000033] flex items-center justify-center hover:scale-105 duration-300 rounded-full cursor-pointer"
+              >
+                {selectedColorIndex === i && (
+                  <CheckIcon size={14} color={isLight ? "black" : "white"} />
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
       <hr className="text-[#0000001A]" />

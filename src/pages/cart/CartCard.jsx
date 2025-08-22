@@ -6,9 +6,10 @@ import { useCartData } from "../../components/context/CartContext";
 const CartCard = ({ product }) => {
   const { removeFromCart } = useCartData();
   return (
-    <div className="w-full flex items-center justify-between gap-[67px]">
+    <div className="w-full flex items-center justify-between">
       <div className="flex items-start gap-[16px]">
         <img
+          loading="lazy"
           src={product.thumbnail}
           className="w-[124px] bg-softGray h-full rounded-[8.66px]"
           alt=""

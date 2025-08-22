@@ -1,5 +1,5 @@
 import { useNavigate, Link } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   MenuIcon,
   ChevronDown,
@@ -9,14 +9,43 @@ import {
   XIcon,
 } from "lucide-react";
 import { useCartData } from "./context/CartContext";
+import { useFetchAllProducts } from "./context/FetchAllProducts";
+import FetchedResults from "./FetchedResults";
+import SearchDropdownPortal from "./SearchDropdownPortal";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const { isLoading, allProducts } = useFetchAllProducts();
+  const [search, setSearch] = useState("");
+  const [debouncedSearch, setDebouncedSearch] = useState("");
+  const [result, setResult] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef(null);
   const { cartRef, isCartVisible, cartItemsCount } = useCartData();
+  const searchWrapRef = useRef(null);
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedSearch(search.trim().toLowerCase());
+    }, 500);
+
+    return () => clearTimeout(handler);
+  }, [search]);
+
+  useEffect(() => {
+    if (!debouncedSearch) {
+      setResult(null);
+      return;
+    }
+
+    const match = allProducts?.filter((p) =>
+      p.title.toLowerCase().includes(debouncedSearch)
+    );
+    setResult(match);
+  }, [debouncedSearch, allProducts]);
   return (
     <>
-      <div className="mx-auto overflow-hidden max-w-[1440px] px-[16px] lg:px-[100px]">
+      <div className="mx-auto max-w-[1440px] px-[16px] lg:px-[100px]">
         <div className="nav-container">
           {/* Menu + Logo */}
           <div className="col-span-2 flex items-center space-x-[16px] lg:space-x-0">
@@ -51,13 +80,28 @@ const Navbar = () => {
             </ul>
           </nav>
 
-          {/* Search Box */}
-          <div className="col-span-5 hidden md:flex items-center bg-[#F0F0F0] rounded-[62px]">
+          {/* Search Box + Results */}
+          <div
+            ref={searchWrapRef}
+            className="col-span-5 hidden md:flex items-center bg-[#F0F0F0] rounded-[62px] relative"
+          >
             <SearchIcon className="text-[#00000066] w-5 h-5 ml-4" />
             <input
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
               className="bg-transparent h-[48px] placeholder:font-satoshi px-2 focus:outline-none text-sm w-full"
               placeholder="Search for products..."
             />
+
+            {/* Results dropdown */}
+            {result && (
+              <SearchDropdownPortal anchorRef={searchWrapRef} open={!!result}>
+                <FetchedResults
+                  result={result}
+                  onClose={() => setResult(null)}
+                />
+              </SearchDropdownPortal>
+            )}
           </div>
 
           {/* Icons */}

@@ -1,5 +1,6 @@
 import { StarIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import ImageWithSkeleton from "../ImageWithSkeleton";
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
@@ -11,12 +12,19 @@ const ProductCard = ({ product }) => {
   return (
     <div className="flex flex-col gap-[10px] lg:gap-[16px] h-full overflow-visible">
       <div className="bg-pearlGray cursor-pointer group rounded-[20px] p-4">
-        <img
+        <ImageWithSkeleton
+          src={product?.thumbnail}
+          alt={product?.title}
+          onClick={handleNavigation}
+          className="group-hover:scale-x-105 transition h-full w-full duration-200 rounded-[20px] object-fit"
+        />
+        {/* <img
+          loading="lazy"
           src={product?.thumbnail}
           alt={product?.title}
           className="group-hover:scale-x-105 transition h-full w-full duration-200 rounded-[20px] object-fit"
           onClick={handleNavigation}
-        />
+        /> */}
       </div>
       <div className="flex flex-col gap-[4px] pb-[24px] lg:pb-[36px] lg:gap-[8px]">
         <p className="font-bold truncate font-satoshi text-[14px] lg:text-[16px]">
@@ -45,6 +53,11 @@ const ProductCard = ({ product }) => {
           <p className="font-bold text-[16px] font-satoshi lg:text-[20px]">
             ${product.price}
           </p>
+          {product.discountPercentage && (
+            <p className="font-bold text-[16px] text-[#00000066] line-through decoration-[#00000066] font-satoshi lg:text-[20px]">
+              ${product.discountPercentage}
+            </p>
+          )}
           {product.discountPercentage && (
             <div className="bg-[#FF33331A] py-[6px] px-[14px] rounded-[62px]">
               <p className="text-[10px] lg:text-[12px] font-satoshi font-medium text-[#FF3333]">
